@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.13)  26 DEC 2025 00:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.13)  26 DEC 2025 01:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -593,17 +593,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
-Package natbib Warning: Citation `lewis2020retrieval' on page 1 undefined on in
-put line 42.
-
-
-Package natbib Warning: Citation `guu2020realm' on page 1 undefined on input li
-ne 42.
-
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
 6.
+
 (C:\Users\dsinh\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -613,14 +605,6 @@ ngChain split im-ports across \T1/lmtt/m/n/10.95 langchain-core \T1/lmr/m/n/10.
 95 (-20) and \T1/lmtt/m/n/10.95 langchain-community 
  []
 
-
-Package natbib Warning: Citation `chen2024benchmarking' on page 1 undefined on 
-input line 53.
-
-
-Package natbib Warning: Citation `es2024ragas' on page 1 undefined on input lin
-e 53.
-
 [1
 
 {C:/Users/dsinh/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/dsin
@@ -628,62 +612,10 @@ h/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/dsinh/Ap
 pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 60.
+ [2{C:/Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.e
+nc}{C:/Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.e
+nc}{C:/Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
 
-
-Package natbib Warning: Citation `ragsurvey2025' on page 2 undefined on input l
-ine 73.
-
-
-Package natbib Warning: Citation `es2024ragas' on page 2 undefined on input lin
-e 73.
-
-
-Package natbib Warning: Citation `chen2024benchmarking' on page 2 undefined on 
-input line 73.
-
-
-Package natbib Warning: Citation `rare2025' on page 2 undefined on input line 7
-3.
-
-
-Package natbib Warning: Citation `lyu2024crud' on page 2 undefined on input lin
-e 73.
-
-
-Package natbib Warning: Citation `liu2023agentbench' on page 2 undefined on inp
-ut line 75.
-
-
-Package natbib Warning: Citation `agenteval2025' on page 2 undefined on input l
-ine 75.
-
-
-Package natbib Warning: Citation `liska2022streamingqa' on page 2 undefined on 
-input line 77.
-
-
-Package natbib Warning: Citation `dhingra2022time' on page 2 undefined on input
- line 77.
-
-
-Package natbib Warning: Citation `medknowledgedrift2025' on page 2 undefined on
- input line 77.
-
-
-Package natbib Warning: Citation `guo2017calibration' on page 2 undefined on in
-put line 79.
-
-
-Package natbib Warning: Citation `sinha2025semantic' on page 2 undefined on inp
-ut line 79.
-
-
-Package natbib Warning: Citation `sinha2025atcb' on page 2 undefined on input l
-ine 79.
-
-[2{C:/Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
-c}{C:/Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.en
-c}{C:/Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
 Overfull \hbox (12.26035pt too wide) in paragraph at lines 102--103
 []\T1/lmr/bx/n/10.95 (-20) LangChain \T1/lmr/m/n/10.95 (-20) (26 tasks): Pack-a
 ge re-struc-tur-ing (v0.0$\OMS/lmsy/m/n/10.95 !$\T1/lmr/m/n/10.95 (-20) v0.2), 
@@ -714,35 +646,22 @@ If that doesn't work, type  X <return>  to quit.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] [5] (driftbench.bbl [6])
-
-Package natbib Warning: There were undefined citations.
-
-[7] [8] (driftbench.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+[4] [5] (driftbench.bbl [6]) [7] [8] (driftbench.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `driftbench.out' has not changed.
 (rerunfilecheck)             Checksum: 91E3C7BB4CE128AFDB2B19FE9AAD61D4;1423.
  ) 
 Here is how much of TeX's memory you used:
- 13387 strings out of 474486
- 212925 string characters out of 5743754
+ 13377 strings out of 474486
+ 212805 string characters out of 5743754
  1936542 words of memory out of 5000000
  35220 multiletter control sequences out of 15000+600000
- 625980 words of font info for 163 fonts, out of 8000000 for 9000
+ 625510 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,79p,1174b,588s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,79p,1174b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
 b><C:/Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pf
@@ -755,9 +674,9 @@ Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/
 Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/
 Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/
 Users/dsinh/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on driftbench.pdf (8 pages, 312973 bytes).
+Output written on driftbench.pdf (8 pages, 319568 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
+ 267 PDF objects out of 1000 (max. 8388607)
  71 named destinations out of 1000 (max. 500000)
  37993 words of extra memory for PDF output out of 42996 (max. 10000000)
 
