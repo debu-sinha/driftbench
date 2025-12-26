@@ -1,0 +1,90 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Chen et~al.(2024)]{chen2024benchmarking}
+Jiawei Chen et~al.
+\newblock Benchmarking large language models in retrieval-augmented generation.
+\newblock \emph{AAAI}, 2024.
+
+\bibitem[Chen et~al.(2025)]{medknowledgedrift2025}
+Wei Chen et~al.
+\newblock Assessing and mitigating medical knowledge drift and conflicts in
+  large language models.
+\newblock \emph{arXiv preprint arXiv:2505.07968}, 2025.
+
+\bibitem[Dhingra et~al.(2022)]{dhingra2022time}
+Bhuwan Dhingra et~al.
+\newblock Time-aware language models as temporal knowledge bases.
+\newblock \emph{TACL}, 2022.
+
+\bibitem[Es et~al.(2024)]{es2024ragas}
+Shahul Es et~al.
+\newblock Ragas: Automated evaluation of retrieval augmented generation.
+\newblock \emph{arXiv preprint}, 2024.
+
+\bibitem[Guo et~al.(2017)]{guo2017calibration}
+Chuan Guo et~al.
+\newblock On calibration of modern neural networks.
+\newblock \emph{ICML}, 2017.
+
+\bibitem[Guu et~al.(2020)]{guu2020realm}
+Kelvin Guu et~al.
+\newblock Realm: Retrieval-augmented language model pre-training.
+\newblock \emph{ICML}, 2020.
+
+\bibitem[Lewis et~al.(2020)]{lewis2020retrieval}
+Patrick Lewis et~al.
+\newblock Retrieval-augmented generation for knowledge-intensive nlp tasks.
+\newblock \emph{NeurIPS}, 2020.
+
+\bibitem[Liska et~al.(2022)]{liska2022streamingqa}
+Adam Liska et~al.
+\newblock Streamingqa: A benchmark for adaptation to new knowledge over time in
+  question answering models.
+\newblock \emph{ICML}, 2022.
+
+\bibitem[Liu et~al.(2024)]{liu2023agentbench}
+Xiao Liu et~al.
+\newblock Agentbench: Evaluating llms as agents.
+\newblock \emph{ICLR}, 2024.
+
+\bibitem[Liu et~al.(2025)]{ragsurvey2025}
+Yang Liu et~al.
+\newblock Retrieval augmented generation evaluation in the era of large
+  language models: A comprehensive survey.
+\newblock \emph{arXiv preprint arXiv:2504.14891}, 2025.
+
+\bibitem[Lyu et~al.(2024)]{lyu2024crud}
+Yuanjie Lyu et~al.
+\newblock Crud-rag: A comprehensive chinese benchmark for retrieval-augmented
+  generation of large language models.
+\newblock \emph{arXiv preprint}, 2024.
+
+\bibitem[Sinha(2025{\natexlab{a}})]{sinha2025atcb}
+Debu Sinha.
+\newblock Do agents know when they will fail? benchmarking tool-use calibration
+  across llm families.
+\newblock \emph{arXiv preprint arXiv:2501.xxxxx}, 2025{\natexlab{a}}.
+
+\bibitem[Sinha(2025{\natexlab{b}})]{sinha2025semantic}
+Debu Sinha.
+\newblock The semantic illusion: Certified limits of embedding-based
+  hallucination detection in rag systems.
+\newblock \emph{arXiv preprint arXiv:2412.xxxxx}, 2025{\natexlab{b}}.
+
+\bibitem[Wang et~al.(2025)]{rare2025}
+Yizhe Wang et~al.
+\newblock Rare: Retrieval-aware robustness evaluation for retrieval-augmented
+  generation systems.
+\newblock \emph{arXiv preprint arXiv:2506.00789}, 2025.
+
+\bibitem[Zhang et~al.(2025)]{agenteval2025}
+Yifan Zhang et~al.
+\newblock Survey on evaluation of llm-based agents.
+\newblock \emph{arXiv preprint arXiv:2503.16416}, 2025.
+
+\end{thebibliography}

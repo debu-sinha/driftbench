@@ -76,7 +76,9 @@ Despite extensive work on RAG evaluation \citep{chen2024benchmarking, es2024raga
 
 \paragraph{Temporal Knowledge and Knowledge Drift.} StreamingQA \citep{liska2022streamingqa} and TempLAMA \citep{dhingra2022time} study temporal reasoning about world events. Recent work on medical knowledge drift \citep{medknowledgedrift2025} highlights how LLMs provide outdated advice when clinical guidelines evolve. DRIFTBENCH addresses a related but distinct problem: not \emph{what changed in the world} or \emph{in the model's weights}, but \emph{what changed in the indexed documentation}. A model may know that Pydantic v2 exists, yet still fail when its retrieval corpus describes v1 behavior.
 
-\paragraph{Calibration Under Distribution Shift.} ECE \citep{guo2017calibration} measures confidence calibration on i.i.d. test sets. We introduce SFR to measure calibration failure \emph{specifically under drift}---the high-stakes regime where confident errors cause real harm. Standard ECE does not capture this: a model can have low ECE on static data yet catastrophic SFR under drift.
+\paragraph{Calibration Under Distribution Shift.} ECE \citep{guo2017calibration} measures confidence calibration on i.i.d. test sets. We introduce SFR to measure calibration failure \emph{specifically under drift}---the high-stakes regime where confident errors cause real harm. Standard ECE does not capture this: a model can have low ECE on static data yet catastrophic SFR under drift. Recent work demonstrates that semantic similarity metrics fail on real hallucinations despite succeeding on synthetic benchmarks \citep{sinha2025semantic}, and that agent calibration inverts model rankings under cost-weighted evaluation \citep{sinha2025atcb}. Together, these findings establish that accuracy alone is insufficient for safe AI deployment.
+
+This work is part of a broader investigation into \textit{reliability under distributional shift}, examining how AI systems fail silently when conditions deviate from training or indexing time.
 
 %==============================================================================
 \section{The DRIFTBENCH Benchmark}
