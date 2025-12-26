@@ -1,0 +1,1889 @@
+{
+  "name": "DRIFTBENCH-Combined",
+  "version": "0.1",
+  "created": "2025-12-25T10:06:03.450282",
+  "n_tasks": 77,
+  "sources": {
+    "fastapi": 41,
+    "langchain": 26,
+    "tool_api": 10
+  },
+  "tasks": [
+    {
+      "task_id": "fastapi_organic_0000",
+      "question": "What is the default value for response_model_exclude_unset in FastAPI?",
+      "answer_v1": "False",
+      "answer_v2": "True",
+      "evidence_v1": "[FastAPI 0.100.0] Response model serialization now excludes unset fields by default Value: False",
+      "evidence_v2": "[FastAPI 0.109.0] Response model serialization now excludes unset fields by default Value: True",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/response_model_exclude_unset.md",
+        "change_type": "default_changed",
+        "old_value": "False",
+        "new_value": "True",
+        "context": "Response model serialization now excludes unset fields by default",
+        "version_old": "0.100.0",
+        "version_new": "0.109.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0001",
+      "question": "How does FastAPI handle repeated response model schemas in OpenAPI?",
+      "answer_v1": "Generates schemas for all response models inline",
+      "answer_v2": "Uses $ref references for repeated schemas",
+      "evidence_v1": "[FastAPI 0.100.0] OpenAPI schema generation optimized to reduce size Value: Generates schemas for all response models inline",
+      "evidence_v2": "[FastAPI 0.109.0] OpenAPI schema generation optimized to reduce size Value: Uses $ref references for repeated schemas",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/openapi_schema_generation.md",
+        "change_type": "behavior_changed",
+        "old_value": "Generates schemas for all response models inline",
+        "new_value": "Uses $ref references for repeated schemas",
+        "context": "OpenAPI schema generation optimized to reduce size",
+        "version_old": "0.100.0",
+        "version_new": "0.109.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0002",
+      "question": "What is the recommended way to handle startup/shutdown events in FastAPI?",
+      "answer_v1": "on_startup/on_shutdown events",
+      "answer_v2": "lifespan async context manager",
+      "evidence_v1": "[FastAPI 0.109.0] Lifespan events now use async context manager pattern Value: on_startup/on_shutdown events",
+      "evidence_v2": "[FastAPI 0.115.0] Lifespan events now use async context manager pattern Value: lifespan async context manager",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/lifespan_context_manager.md",
+        "change_type": "default_changed",
+        "old_value": "on_startup/on_shutdown events",
+        "new_value": "lifespan async context manager",
+        "context": "Lifespan events now use async context manager pattern",
+        "version_old": "0.109.0",
+        "version_new": "0.115.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0003",
+      "question": "How does dependency caching work in FastAPI's Depends()?",
+      "answer_v1": "use_cache=True",
+      "answer_v2": "use_cache parameter deprecated, caching always enabled",
+      "evidence_v1": "[FastAPI 0.109.0] Dependency injection caching behavior changed Value: use_cache=True",
+      "evidence_v2": "[FastAPI 0.115.0] Dependency injection caching behavior changed Value: use_cache parameter deprecated, caching always enabled",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/depends()_signature.md",
+        "change_type": "param_renamed",
+        "old_value": "use_cache=True",
+        "new_value": "use_cache parameter deprecated, caching always enabled",
+        "context": "Dependency injection caching behavior changed",
+        "version_old": "0.109.0",
+        "version_new": "0.115.0"
+      },
+      "difficulty": "hard",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0004",
+      "question": "What decorator is used for field validation in FastAPI models?",
+      "answer_v1": "Pydantic v1 validators with @validator decorator",
+      "answer_v2": "Pydantic v2 validators with @field_validator decorator",
+      "evidence_v1": "[FastAPI 0.99.0] FastAPI 0.100.0 requires Pydantic v2 Value: Pydantic v1 validators with @validator decorator",
+      "evidence_v2": "[FastAPI 0.100.0] FastAPI 0.100.0 requires Pydantic v2 Value: Pydantic v2 validators with @field_validator decorator",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/pydantic_model_validation.md",
+        "change_type": "behavior_changed",
+        "old_value": "Pydantic v1 validators with @validator decorator",
+        "new_value": "Pydantic v2 validators with @field_validator decorator",
+        "context": "FastAPI 0.100.0 requires Pydantic v2",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0005",
+      "question": "How do you enable ORM mode in FastAPI Pydantic models?",
+      "answer_v1": "class Config with orm_mode = True",
+      "answer_v2": "model_config with from_attributes = True",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 configuration syntax changed Value: class Config with orm_mode = True",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 configuration syntax changed Value: model_config with from_attributes = True",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/model_config.md",
+        "change_type": "default_changed",
+        "old_value": "class Config with orm_mode = True",
+        "new_value": "model_config with from_attributes = True",
+        "context": "Pydantic v2 configuration syntax changed",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0006",
+      "question": "How do you add extra fields to the JSON schema of a Pydantic model in FastAPI?",
+      "answer_v1": "schema_extra in Config class",
+      "answer_v2": "json_schema_extra in model_config",
+      "evidence_v1": "[FastAPI 0.99.0] JSON schema customization syntax changed Value: schema_extra in Config class",
+      "evidence_v2": "[FastAPI 0.100.0] JSON schema customization syntax changed Value: json_schema_extra in model_config",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/schema_extra.md",
+        "change_type": "param_renamed",
+        "old_value": "schema_extra in Config class",
+        "new_value": "json_schema_extra in model_config",
+        "context": "JSON schema customization syntax changed",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "hard",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0007",
+      "question": "How do you declare an optional field in a FastAPI request model?",
+      "answer_v1": "Optional[str] = None implies optional",
+      "answer_v2": "Must explicitly use Optional[str] = None or str | None = None",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 is stricter about optional field declarations Value: Optional[str] = None implies optional",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 is stricter about optional field declarations Value: Must explicitly use Optional[str] = None or str | None = None",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/optional_fields.md",
+        "change_type": "behavior_changed",
+        "old_value": "Optional[str] = None implies optional",
+        "new_value": "Must explicitly use Optional[str] = None or str | None = None",
+        "context": "Pydantic v2 is stricter about optional field declarations",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0008",
+      "question": "What is the recommended way to declare query parameters with validation in FastAPI?",
+      "answer_v1": "Query() without explicit validation",
+      "answer_v2": "Query() with Annotated syntax recommended",
+      "evidence_v1": "[FastAPI 0.95.0] FastAPI recommends Annotated for parameter declarations Value: Query() without explicit validation",
+      "evidence_v2": "[FastAPI 0.99.0] FastAPI recommends Annotated for parameter declarations Value: Query() with Annotated syntax recommended",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/query_parameter_validation.md",
+        "change_type": "default_changed",
+        "old_value": "Query() without explicit validation",
+        "new_value": "Query() with Annotated syntax recommended",
+        "context": "FastAPI recommends Annotated for parameter declarations",
+        "version_old": "0.95.0",
+        "version_new": "0.99.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0009",
+      "question": "When do background tasks execute in FastAPI relative to the response?",
+      "answer_v1": "Background tasks run after response sent",
+      "answer_v2": "Background tasks run after response sent, but with improved error handling",
+      "evidence_v1": "[FastAPI 0.95.0] Background task error handling improved Value: Background tasks run after response sent",
+      "evidence_v2": "[FastAPI 0.99.0] Background task error handling improved Value: Background tasks run after response sent, but with improved error handling",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/background_tasks_execution.md",
+        "change_type": "behavior_changed",
+        "old_value": "Background tasks run after response sent",
+        "new_value": "Background tasks run after response sent, but with improved error handling",
+        "context": "Background task error handling improved",
+        "version_old": "0.95.0",
+        "version_new": "0.99.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0010",
+      "question": "What is the preferred way to add string length constraints in Pydantic v2?",
+      "answer_v1": "min_length, max_length as Field() parameters",
+      "answer_v2": "min_length, max_length still work but Annotated[str, StringConstraints()] preferred",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 introduces StringConstraints for string validation Value: min_length, max_length as Field() parameters",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 introduces StringConstraints for string validation Value: min_length, max_length still work but Annotated[str, StringConstraints()] preferred",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/field_constraints.md",
+        "change_type": "param_renamed",
+        "old_value": "min_length, max_length as Field() parameters",
+        "new_value": "min_length, max_length still work but Annotated[str, StringConstraints()] preferred",
+        "context": "Pydantic v2 introduces StringConstraints for string validation",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0011",
+      "question": "How do you convert a Pydantic model to a dictionary in v2?",
+      "answer_v1": "model.dict() for dictionary output",
+      "answer_v2": "model.model_dump() for dictionary output",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 renames dict() to model_dump() Value: model.dict() for dictionary output",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 renames dict() to model_dump() Value: model.model_dump() for dictionary output",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/model_serialization.md",
+        "change_type": "behavior_changed",
+        "old_value": "model.dict() for dictionary output",
+        "new_value": "model.model_dump() for dictionary output",
+        "context": "Pydantic v2 renames dict() to model_dump()",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0012",
+      "question": "How do you serialize a Pydantic model to JSON string in v2?",
+      "answer_v1": "model.json() for JSON string output",
+      "answer_v2": "model.model_dump_json() for JSON string output",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 renames json() to model_dump_json() Value: model.json() for JSON string output",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 renames json() to model_dump_json() Value: model.model_dump_json() for JSON string output",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/json_serialization.md",
+        "change_type": "behavior_changed",
+        "old_value": "model.json() for JSON string output",
+        "new_value": "model.model_dump_json() for JSON string output",
+        "context": "Pydantic v2 renames json() to model_dump_json()",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0013",
+      "question": "How do you get the JSON schema of a Pydantic model in v2?",
+      "answer_v1": "Model.schema() for JSON schema",
+      "answer_v2": "Model.model_json_schema() for JSON schema",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 renames schema() to model_json_schema() Value: Model.schema() for JSON schema",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 renames schema() to model_json_schema() Value: Model.model_json_schema() for JSON schema",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/schema_method.md",
+        "change_type": "param_renamed",
+        "old_value": "Model.schema() for JSON schema",
+        "new_value": "Model.model_json_schema() for JSON schema",
+        "context": "Pydantic v2 renames schema() to model_json_schema()",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0014",
+      "question": "How do you create a Pydantic model from a dictionary in v2?",
+      "answer_v1": "Model.parse_obj(data) to create from dict",
+      "answer_v2": "Model.model_validate(data) to create from dict",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 renames parse_obj() to model_validate() Value: Model.parse_obj(data) to create from dict",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 renames parse_obj() to model_validate() Value: Model.model_validate(data) to create from dict",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/parse_obj_method.md",
+        "change_type": "behavior_changed",
+        "old_value": "Model.parse_obj(data) to create from dict",
+        "new_value": "Model.model_validate(data) to create from dict",
+        "context": "Pydantic v2 renames parse_obj() to model_validate()",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0015",
+      "question": "What decorator is used for model-level validation in Pydantic v2?",
+      "answer_v1": "@root_validator decorator for model-level validation",
+      "answer_v2": "@model_validator decorator for model-level validation",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 renames root_validator to model_validator Value: @root_validator decorator for model-level validation",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 renames root_validator to model_validator Value: @model_validator decorator for model-level validation",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/root_validators.md",
+        "change_type": "behavior_changed",
+        "old_value": "@root_validator decorator for model-level validation",
+        "new_value": "@model_validator decorator for model-level validation",
+        "context": "Pydantic v2 renames root_validator to model_validator",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0016",
+      "question": "How do you disable type coercion in Pydantic v2?",
+      "answer_v1": "Coercion enabled by default (strings to ints, etc)",
+      "answer_v2": "Strict mode available via strict=True in model_config",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 adds strict mode to disable type coercion Value: Coercion enabled by default (strings to ints, etc)",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 adds strict mode to disable type coercion Value: Strict mode available via strict=True in model_config",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/strict_mode.md",
+        "change_type": "default_changed",
+        "old_value": "Coercion enabled by default (strings to ints, etc)",
+        "new_value": "Strict mode available via strict=True in model_config",
+        "context": "Pydantic v2 adds strict mode to disable type coercion",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0017",
+      "question": "How do you resolve forward references in Pydantic v2?",
+      "answer_v1": "Model.update_forward_refs() to resolve forward references",
+      "answer_v2": "Model.model_rebuild() to resolve forward references",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 renames update_forward_refs() to model_rebuild() Value: Model.update_forward_refs() to resolve forward references",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 renames update_forward_refs() to model_rebuild() Value: Model.model_rebuild() to resolve forward references",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/update_forward_refs.md",
+        "change_type": "behavior_changed",
+        "old_value": "Model.update_forward_refs() to resolve forward references",
+        "new_value": "Model.model_rebuild() to resolve forward references",
+        "context": "Pydantic v2 renames update_forward_refs() to model_rebuild()",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "hard",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0018",
+      "question": "What alias options are available in Pydantic v2 Field()?",
+      "answer_v1": "Field(alias='name') only",
+      "answer_v2": "Field(alias='name', serialization_alias='name', validation_alias='name')",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 adds separate aliases for validation and serialization Value: Field(alias='name') only",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 adds separate aliases for validation and serialization Value: Field(alias='name', serialization_alias='name', validation_alias='name')",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/field_alias.md",
+        "change_type": "param_renamed",
+        "old_value": "Field(alias='name') only",
+        "new_value": "Field(alias='name', serialization_alias='name', validation_alias='name')",
+        "context": "Pydantic v2 adds separate aliases for validation and serialization",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "hard",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0019",
+      "question": "How do you create a modified copy of a Pydantic model in v2?",
+      "answer_v1": "model.copy(update={'field': value}) for shallow copy",
+      "answer_v2": "model.model_copy(update={'field': value}) for shallow copy",
+      "evidence_v1": "[FastAPI 0.99.0] Pydantic v2 renames copy() to model_copy() Value: model.copy(update={'field': value}) for shallow copy",
+      "evidence_v2": "[FastAPI 0.100.0] Pydantic v2 renames copy() to model_copy() Value: model.model_copy(update={'field': value}) for shallow copy",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/copy_method.md",
+        "change_type": "behavior_changed",
+        "old_value": "model.copy(update={'field': value}) for shallow copy",
+        "new_value": "model.model_copy(update={'field': value}) for shallow copy",
+        "context": "Pydantic v2 renames copy() to model_copy()",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0020",
+      "question": "What OpenAPI version does FastAPI 0.110+ use by default?",
+      "answer_v1": "OpenAPI 3.0.2",
+      "answer_v2": "OpenAPI 3.1.0",
+      "evidence_v1": "[FastAPI 0.109.0] FastAPI upgrades to OpenAPI 3.1.0 specification Value: OpenAPI 3.0.2",
+      "evidence_v2": "[FastAPI 0.110.0] FastAPI upgrades to OpenAPI 3.1.0 specification Value: OpenAPI 3.1.0",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/openapi_version.md",
+        "change_type": "default_changed",
+        "old_value": "OpenAPI 3.0.2",
+        "new_value": "OpenAPI 3.1.0",
+        "context": "FastAPI upgrades to OpenAPI 3.1.0 specification",
+        "version_old": "0.109.0",
+        "version_new": "0.110.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0021",
+      "question": "How are nullable fields represented in FastAPI 0.110+ OpenAPI schema?",
+      "answer_v1": "nullable: true in schema",
+      "answer_v2": "type: ['string', 'null'] (JSON Schema style)",
+      "evidence_v1": "[FastAPI 0.109.0] OpenAPI 3.1.0 uses JSON Schema style for nullable Value: nullable: true in schema",
+      "evidence_v2": "[FastAPI 0.110.0] OpenAPI 3.1.0 uses JSON Schema style for nullable Value: type: ['string', 'null'] (JSON Schema style)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/nullable_fields_in_openapi.md",
+        "change_type": "behavior_changed",
+        "old_value": "nullable: true in schema",
+        "new_value": "type: ['string', 'null'] (JSON Schema style)",
+        "context": "OpenAPI 3.1.0 uses JSON Schema style for nullable",
+        "version_old": "0.109.0",
+        "version_new": "0.110.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0022",
+      "question": "What HTTP library does Starlette TestClient use?",
+      "answer_v1": "TestClient uses requests library",
+      "answer_v2": "TestClient uses httpx library",
+      "evidence_v1": "[FastAPI 0.27.0] Starlette switched from requests to httpx for TestClient Value: TestClient uses requests library",
+      "evidence_v2": "[FastAPI 0.32.0] Starlette switched from requests to httpx for TestClient Value: TestClient uses httpx library",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/testclient.md",
+        "change_type": "behavior_changed",
+        "old_value": "TestClient uses requests library",
+        "new_value": "TestClient uses httpx library",
+        "context": "Starlette switched from requests to httpx for TestClient",
+        "version_old": "0.27.0",
+        "version_new": "0.32.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0023",
+      "question": "What arguments do Starlette exception handlers receive?",
+      "answer_v1": "Exception handlers receive (request, exc) arguments",
+      "answer_v2": "Exception handlers receive (request, exc) with typed Request",
+      "evidence_v1": "[FastAPI 0.27.0] Starlette improved type hints for exception handlers Value: Exception handlers receive (request, exc) arguments",
+      "evidence_v2": "[FastAPI 0.32.0] Starlette improved type hints for exception handlers Value: Exception handlers receive (request, exc) with typed Request",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/exception_handlers.md",
+        "change_type": "default_changed",
+        "old_value": "Exception handlers receive (request, exc) arguments",
+        "new_value": "Exception handlers receive (request, exc) with typed Request",
+        "context": "Starlette improved type hints for exception handlers",
+        "version_old": "0.27.0",
+        "version_new": "0.32.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0024",
+      "question": "What is the recommended query style in SQLAlchemy 2.0?",
+      "answer_v1": "session.query(Model).filter() style",
+      "answer_v2": "session.execute(select(Model).where()) style",
+      "evidence_v1": "[FastAPI 1.4] SQLAlchemy 2.0 uses select() statement style Value: session.query(Model).filter() style",
+      "evidence_v2": "[FastAPI 2.0] SQLAlchemy 2.0 uses select() statement style Value: session.execute(select(Model).where()) style",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/query_execution.md",
+        "change_type": "behavior_changed",
+        "old_value": "session.query(Model).filter() style",
+        "new_value": "session.execute(select(Model).where()) style",
+        "context": "SQLAlchemy 2.0 uses select() statement style",
+        "version_old": "1.4",
+        "version_new": "2.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0025",
+      "question": "How do you use async with SQLAlchemy 2.0?",
+      "answer_v1": "Async requires separate package (databases)",
+      "answer_v2": "Native async support with AsyncSession",
+      "evidence_v1": "[FastAPI 1.4] SQLAlchemy 2.0 has native async support Value: Async requires separate package (databases)",
+      "evidence_v2": "[FastAPI 2.0] SQLAlchemy 2.0 has native async support Value: Native async support with AsyncSession",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/async_support.md",
+        "change_type": "default_changed",
+        "old_value": "Async requires separate package (databases)",
+        "new_value": "Native async support with AsyncSession",
+        "context": "SQLAlchemy 2.0 has native async support",
+        "version_old": "1.4",
+        "version_new": "2.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0026",
+      "question": "How do you define typed columns in SQLAlchemy 2.0 ORM?",
+      "answer_v1": "Column(Integer, primary_key=True)",
+      "answer_v2": "mapped_column(Integer, primary_key=True) with Mapped[int]",
+      "evidence_v1": "[FastAPI 1.4] SQLAlchemy 2.0 introduces mapped_column() and Mapped type hints Value: Column(Integer, primary_key=True)",
+      "evidence_v2": "[FastAPI 2.0] SQLAlchemy 2.0 introduces mapped_column() and Mapped type hints Value: mapped_column(Integer, primary_key=True) with Mapped[int]",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/column_definitions.md",
+        "change_type": "behavior_changed",
+        "old_value": "Column(Integer, primary_key=True)",
+        "new_value": "mapped_column(Integer, primary_key=True) with Mapped[int]",
+        "context": "SQLAlchemy 2.0 introduces mapped_column() and Mapped type hints",
+        "version_old": "1.4",
+        "version_new": "2.0"
+      },
+      "difficulty": "hard",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0027",
+      "question": "How do you define typed relationships in SQLAlchemy 2.0?",
+      "answer_v1": "relationship('Model') with string reference",
+      "answer_v2": "relationship() returns Mapped[Model] with type annotation",
+      "evidence_v1": "[FastAPI 1.4] SQLAlchemy 2.0 uses type annotations for relationships Value: relationship('Model') with string reference",
+      "evidence_v2": "[FastAPI 2.0] SQLAlchemy 2.0 uses type annotations for relationships Value: relationship() returns Mapped[Model] with type annotation",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/relationship_definitions.md",
+        "change_type": "behavior_changed",
+        "old_value": "relationship('Model') with string reference",
+        "new_value": "relationship() returns Mapped[Model] with type annotation",
+        "context": "SQLAlchemy 2.0 uses type annotations for relationships",
+        "version_old": "1.4",
+        "version_new": "2.0"
+      },
+      "difficulty": "hard",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0028",
+      "question": "What is the default timeout in HTTPX 0.25+?",
+      "answer_v1": "No default timeout (infinite)",
+      "answer_v2": "Default timeout of 5 seconds",
+      "evidence_v1": "[FastAPI 0.23.0] HTTPX added default timeout to prevent hanging requests Value: No default timeout (infinite)",
+      "evidence_v2": "[FastAPI 0.25.0] HTTPX added default timeout to prevent hanging requests Value: Default timeout of 5 seconds",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/timeout_default.md",
+        "change_type": "default_changed",
+        "old_value": "No default timeout (infinite)",
+        "new_value": "Default timeout of 5 seconds",
+        "context": "HTTPX added default timeout to prevent hanging requests",
+        "version_old": "0.23.0",
+        "version_new": "0.25.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0029",
+      "question": "Does HTTPX follow redirects by default in version 0.25+?",
+      "answer_v1": "follow_redirects=True by default",
+      "answer_v2": "follow_redirects=False by default",
+      "evidence_v1": "[FastAPI 0.23.0] HTTPX changed default redirect behavior Value: follow_redirects=True by default",
+      "evidence_v2": "[FastAPI 0.25.0] HTTPX changed default redirect behavior Value: follow_redirects=False by default",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/follow_redirects.md",
+        "change_type": "behavior_changed",
+        "old_value": "follow_redirects=True by default",
+        "new_value": "follow_redirects=False by default",
+        "context": "HTTPX changed default redirect behavior",
+        "version_old": "0.23.0",
+        "version_new": "0.25.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0030",
+      "question": "How do you access OAuth2 scopes in FastAPI dependencies?",
+      "answer_v1": "Scopes defined as list of strings",
+      "answer_v2": "Scopes defined with SecurityScopes dependency",
+      "evidence_v1": "[FastAPI 0.95.0] FastAPI improved OAuth2 scope handling Value: Scopes defined as list of strings",
+      "evidence_v2": "[FastAPI 0.100.0] FastAPI improved OAuth2 scope handling Value: Scopes defined with SecurityScopes dependency",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/oauth2_scopes.md",
+        "change_type": "behavior_changed",
+        "old_value": "Scopes defined as list of strings",
+        "new_value": "Scopes defined with SecurityScopes dependency",
+        "context": "FastAPI improved OAuth2 scope handling",
+        "version_old": "0.95.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "hard",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0031",
+      "question": "What is the default SameSite attribute for cookies in FastAPI?",
+      "answer_v1": "Cookies without SameSite attribute",
+      "answer_v2": "Cookies with SameSite=Lax by default",
+      "evidence_v1": "[FastAPI 0.95.0] FastAPI follows browser security best practices Value: Cookies without SameSite attribute",
+      "evidence_v2": "[FastAPI 0.100.0] FastAPI follows browser security best practices Value: Cookies with SameSite=Lax by default",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/cookie_security.md",
+        "change_type": "default_changed",
+        "old_value": "Cookies without SameSite attribute",
+        "new_value": "Cookies with SameSite=Lax by default",
+        "context": "FastAPI follows browser security best practices",
+        "version_old": "0.95.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0032",
+      "question": "How do you close a WebSocket with a specific code in FastAPI?",
+      "answer_v1": "Manual close code handling",
+      "answer_v2": "WebSocketClose exception with status codes",
+      "evidence_v1": "[FastAPI 0.90.0] FastAPI added WebSocketClose for cleaner close handling Value: Manual close code handling",
+      "evidence_v2": "[FastAPI 0.100.0] FastAPI added WebSocketClose for cleaner close handling Value: WebSocketClose exception with status codes",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/websocket_close_codes.md",
+        "change_type": "behavior_changed",
+        "old_value": "Manual close code handling",
+        "new_value": "WebSocketClose exception with status codes",
+        "context": "FastAPI added WebSocketClose for cleaner close handling",
+        "version_old": "0.90.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0033",
+      "question": "How do you check WebSocket connection state in FastAPI?",
+      "answer_v1": "No built-in connection state tracking",
+      "answer_v2": "WebSocket.state attribute available",
+      "evidence_v1": "[FastAPI 0.90.0] FastAPI added WebSocket state tracking Value: No built-in connection state tracking",
+      "evidence_v2": "[FastAPI 0.100.0] FastAPI added WebSocket state tracking Value: WebSocket.state attribute available",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/websocket_state.md",
+        "change_type": "default_changed",
+        "old_value": "No built-in connection state tracking",
+        "new_value": "WebSocket.state attribute available",
+        "context": "FastAPI added WebSocket state tracking",
+        "version_old": "0.90.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0034",
+      "question": "When does cleanup code run for yield dependencies in FastAPI?",
+      "answer_v1": "Cleanup runs even if exception not handled",
+      "answer_v2": "Cleanup runs in finally block, exception re-raised",
+      "evidence_v1": "[FastAPI 0.85.0] FastAPI improved yield dependency error handling Value: Cleanup runs even if exception not handled",
+      "evidence_v2": "[FastAPI 0.95.0] FastAPI improved yield dependency error handling Value: Cleanup runs in finally block, exception re-raised",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/yield_dependencies_cleanup.md",
+        "change_type": "behavior_changed",
+        "old_value": "Cleanup runs even if exception not handled",
+        "new_value": "Cleanup runs in finally block, exception re-raised",
+        "context": "FastAPI improved yield dependency error handling",
+        "version_old": "0.85.0",
+        "version_new": "0.95.0"
+      },
+      "difficulty": "hard",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0035",
+      "question": "How do you temporarily override dependencies in FastAPI tests?",
+      "answer_v1": "app.dependency_overrides dict only",
+      "answer_v2": "app.dependency_overrides with context manager support",
+      "evidence_v1": "[FastAPI 0.85.0] FastAPI added context manager for dependency overrides Value: app.dependency_overrides dict only",
+      "evidence_v2": "[FastAPI 0.95.0] FastAPI added context manager for dependency overrides Value: app.dependency_overrides with context manager support",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/dependency_overrides.md",
+        "change_type": "default_changed",
+        "old_value": "app.dependency_overrides dict only",
+        "new_value": "app.dependency_overrides with context manager support",
+        "context": "FastAPI added context manager for dependency overrides",
+        "version_old": "0.85.0",
+        "version_new": "0.95.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0036",
+      "question": "How do you exclude nested fields from response model in FastAPI?",
+      "answer_v1": "response_model_include, response_model_exclude as sets",
+      "answer_v2": "response_model_include, response_model_exclude as sets or dicts",
+      "evidence_v1": "[FastAPI 0.89.0] FastAPI added nested field include/exclude support Value: response_model_include, response_model_exclude as sets",
+      "evidence_v2": "[FastAPI 0.100.0] FastAPI added nested field include/exclude support Value: response_model_include, response_model_exclude as sets or dicts",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/response_model_include/exclude.md",
+        "change_type": "param_renamed",
+        "old_value": "response_model_include, response_model_exclude as sets",
+        "new_value": "response_model_include, response_model_exclude as sets or dicts",
+        "context": "FastAPI added nested field include/exclude support",
+        "version_old": "0.89.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "hard",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0037",
+      "question": "How do you skip response model validation in FastAPI?",
+      "answer_v1": "Response model validates output",
+      "answer_v2": "response_model_validate=True (explicit) or False to skip",
+      "evidence_v1": "[FastAPI 0.89.0] FastAPI added option to skip response validation Value: Response model validates output",
+      "evidence_v2": "[FastAPI 0.100.0] FastAPI added option to skip response validation Value: response_model_validate=True (explicit) or False to skip",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/response_model_validation.md",
+        "change_type": "default_changed",
+        "old_value": "Response model validates output",
+        "new_value": "response_model_validate=True (explicit) or False to skip",
+        "context": "FastAPI added option to skip response validation",
+        "version_old": "0.89.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0038",
+      "question": "How do you reset file position in FastAPI UploadFile?",
+      "answer_v1": "UploadFile.file.seek() for position reset",
+      "answer_v2": "await UploadFile.seek() async method available",
+      "evidence_v1": "[FastAPI 0.80.0] FastAPI added async seek() to UploadFile Value: UploadFile.file.seek() for position reset",
+      "evidence_v2": "[FastAPI 0.95.0] FastAPI added async seek() to UploadFile Value: await UploadFile.seek() async method available",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/uploadfile_seek.md",
+        "change_type": "behavior_changed",
+        "old_value": "UploadFile.file.seek() for position reset",
+        "new_value": "await UploadFile.seek() async method available",
+        "context": "FastAPI added async seek() to UploadFile",
+        "version_old": "0.80.0",
+        "version_new": "0.95.0"
+      },
+      "difficulty": "easy",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_organic_0039",
+      "question": "How do you limit upload file size in FastAPI?",
+      "answer_v1": "No default file size limit",
+      "answer_v2": "Configurable via max_size parameter",
+      "evidence_v1": "[FastAPI 0.80.0] FastAPI added file size limit configuration Value: No default file size limit",
+      "evidence_v2": "[FastAPI 0.95.0] FastAPI added file size limit configuration Value: Configurable via max_size parameter",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/file_size_limit.md",
+        "change_type": "default_changed",
+        "old_value": "No default file size limit",
+        "new_value": "Configurable via max_size parameter",
+        "context": "FastAPI added file size limit configuration",
+        "version_old": "0.80.0",
+        "version_new": "0.95.0"
+      },
+      "difficulty": "medium",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "fastapi_multihop_0040",
+      "question": "If I'm migrating a FastAPI app from 0.99 to 0.100, and I have a model with orm_mode=True and a @validator decorator, what two changes do I need to make?",
+      "answer_v1": "No changes needed - orm_mode=True and @validator work correctly",
+      "answer_v2": "Change orm_mode=True to from_attributes=True in model_config, and change @validator to @field_validator",
+      "evidence_v1": "[FastAPI 0.99] Uses Pydantic v1 with class Config and @validator decorators",
+      "evidence_v2": "[FastAPI 0.100] Requires Pydantic v2 with model_config dict and @field_validator decorators",
+      "category": "multi_hop",
+      "source_change": {
+        "file_path": "docs/migration_guide.md",
+        "change_type": "migration",
+        "old_value": "Pydantic v1 patterns",
+        "new_value": "Pydantic v2 patterns",
+        "context": "Migration from Pydantic v1 to v2",
+        "version_old": "0.99.0",
+        "version_new": "0.100.0"
+      },
+      "difficulty": "hard",
+      "source": "fastapi"
+    },
+    {
+      "task_id": "langchain_organic_0000",
+      "question": "How do you import ChatOpenAI in LangChain v0.1+?",
+      "answer_v1": "from langchain.chat_models import ChatOpenAI",
+      "answer_v2": "from langchain_openai import ChatOpenAI",
+      "evidence_v1": "[LangChain 0.0.350] LangChain split into langchain-core and provider packages Method: from langchain.chat_models import ChatOpenAI",
+      "evidence_v2": "[LangChain 0.1.0] LangChain split into langchain-core and provider packages Method: from langchain_openai import ChatOpenAI",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/chatopenai_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.chat_models import ChatOpenAI",
+        "new_value": "from langchain_openai import ChatOpenAI",
+        "context": "LangChain split into langchain-core and provider packages",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0001",
+      "question": "How do you import OpenAI embeddings in LangChain v0.1+?",
+      "answer_v1": "from langchain.embeddings import OpenAIEmbeddings",
+      "answer_v2": "from langchain_openai import OpenAIEmbeddings",
+      "evidence_v1": "[LangChain 0.0.350] Embeddings moved to provider-specific packages Method: from langchain.embeddings import OpenAIEmbeddings",
+      "evidence_v2": "[LangChain 0.1.0] Embeddings moved to provider-specific packages Method: from langchain_openai import OpenAIEmbeddings",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/openai_embeddings_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.embeddings import OpenAIEmbeddings",
+        "new_value": "from langchain_openai import OpenAIEmbeddings",
+        "context": "Embeddings moved to provider-specific packages",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0002",
+      "question": "How do you import Chroma vector store in LangChain v0.1+?",
+      "answer_v1": "from langchain.vectorstores import Chroma",
+      "answer_v2": "from langchain_chroma import Chroma",
+      "evidence_v1": "[LangChain 0.0.350] Vector stores moved to community or dedicated packages Method: from langchain.vectorstores import Chroma",
+      "evidence_v2": "[LangChain 0.1.0] Vector stores moved to community or dedicated packages Method: from langchain_chroma import Chroma",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/chroma_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.vectorstores import Chroma",
+        "new_value": "from langchain_chroma import Chroma",
+        "context": "Vector stores moved to community or dedicated packages",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0003",
+      "question": "What method do you use to run a chain in LangChain v0.1+?",
+      "answer_v1": "chain.run(input)",
+      "answer_v2": "chain.invoke(input)",
+      "evidence_v1": "[LangChain 0.0.350] LangChain Expression Language (LCEL) uses invoke/batch/stream Method: chain.run(input)",
+      "evidence_v2": "[LangChain 0.1.0] LangChain Expression Language (LCEL) uses invoke/batch/stream Method: chain.invoke(input)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/chain_invocation.md",
+        "change_type": "behavior_changed",
+        "old_value": "chain.run(input)",
+        "new_value": "chain.invoke(input)",
+        "context": "LangChain Expression Language (LCEL) uses invoke/batch/stream",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0004",
+      "question": "What async method runs a chain in LangChain v0.1+?",
+      "answer_v1": "await chain.arun(input)",
+      "answer_v2": "await chain.ainvoke(input)",
+      "evidence_v1": "[LangChain 0.0.350] Async methods renamed to ainvoke/abatch/astream Method: await chain.arun(input)",
+      "evidence_v2": "[LangChain 0.1.0] Async methods renamed to ainvoke/abatch/astream Method: await chain.ainvoke(input)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/async_chain_execution.md",
+        "change_type": "behavior_changed",
+        "old_value": "await chain.arun(input)",
+        "new_value": "await chain.ainvoke(input)",
+        "context": "Async methods renamed to ainvoke/abatch/astream",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0005",
+      "question": "How do you compose chains together in LCEL?",
+      "answer_v1": "SequentialChain([chain1, chain2])",
+      "answer_v2": "chain1 | chain2 (pipe operator)",
+      "evidence_v1": "[LangChain 0.0.300] LCEL uses pipe operator for chain composition Method: SequentialChain([chain1, chain2])",
+      "evidence_v2": "[LangChain 0.1.0] LCEL uses pipe operator for chain composition Method: chain1 | chain2 (pipe operator)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/chain_composition.md",
+        "change_type": "behavior_changed",
+        "old_value": "SequentialChain([chain1, chain2])",
+        "new_value": "chain1 | chain2 (pipe operator)",
+        "context": "LCEL uses pipe operator for chain composition",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0006",
+      "question": "What replaces LLMChain in LangChain v0.1+?",
+      "answer_v1": "LLMChain(llm=llm, prompt=prompt)",
+      "answer_v2": "prompt | llm (pipe composition)",
+      "evidence_v1": "[LangChain 0.0.300] LLMChain deprecated in favor of LCEL Method: LLMChain(llm=llm, prompt=prompt)",
+      "evidence_v2": "[LangChain 0.1.0] LLMChain deprecated in favor of LCEL Method: prompt | llm (pipe composition)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/prompt_templates.md",
+        "change_type": "behavior_changed",
+        "old_value": "LLMChain(llm=llm, prompt=prompt)",
+        "new_value": "prompt | llm (pipe composition)",
+        "context": "LLMChain deprecated in favor of LCEL",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0007",
+      "question": "How do you parse LLM output in LCEL?",
+      "answer_v1": "LLMChain with output_key",
+      "answer_v2": "chain | parser (RunnablePassthrough)",
+      "evidence_v1": "[LangChain 0.0.300] Output parsing integrated into LCEL Method: LLMChain with output_key",
+      "evidence_v2": "[LangChain 0.1.0] Output parsing integrated into LCEL Method: chain | parser (RunnablePassthrough)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/output_parsing.md",
+        "change_type": "param_renamed",
+        "old_value": "LLMChain with output_key",
+        "new_value": "chain | parser (RunnablePassthrough)",
+        "context": "Output parsing integrated into LCEL",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "hard",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0008",
+      "question": "How do you pass callbacks to a chain in LangChain v0.2?",
+      "answer_v1": "Callbacks passed at chain creation",
+      "answer_v2": "Callbacks passed at invoke time (config={'callbacks': [...]})",
+      "evidence_v1": "[LangChain 0.1.0] LangChain v0.2 prefers config dict for callbacks Method: Callbacks passed at chain creation",
+      "evidence_v2": "[LangChain 0.2.0] LangChain v0.2 prefers config dict for callbacks Method: Callbacks passed at invoke time (config={'callbacks': [...]})",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/callback_handling.md",
+        "change_type": "default_changed",
+        "old_value": "Callbacks passed at chain creation",
+        "new_value": "Callbacks passed at invoke time (config={'callbacks': [...]})",
+        "context": "LangChain v0.2 prefers config dict for callbacks",
+        "version_old": "0.1.0",
+        "version_new": "0.2.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0009",
+      "question": "How do you add memory to LCEL chains in LangChain v0.2?",
+      "answer_v1": "ConversationChain with memory parameter",
+      "answer_v2": "RunnableWithMessageHistory wrapper",
+      "evidence_v1": "[LangChain 0.1.0] Memory handling refactored for LCEL compatibility Method: ConversationChain with memory parameter",
+      "evidence_v2": "[LangChain 0.2.0] Memory handling refactored for LCEL compatibility Method: RunnableWithMessageHistory wrapper",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/memory_in_chains.md",
+        "change_type": "behavior_changed",
+        "old_value": "ConversationChain with memory parameter",
+        "new_value": "RunnableWithMessageHistory wrapper",
+        "context": "Memory handling refactored for LCEL compatibility",
+        "version_old": "0.1.0",
+        "version_new": "0.2.0"
+      },
+      "difficulty": "hard",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0010",
+      "question": "How do you import TextLoader in LangChain v0.2?",
+      "answer_v1": "from langchain.document_loaders import TextLoader",
+      "answer_v2": "from langchain_community.document_loaders import TextLoader",
+      "evidence_v1": "[LangChain 0.1.0] Document loaders moved to langchain-community Method: from langchain.document_loaders import TextLoader",
+      "evidence_v2": "[LangChain 0.2.0] Document loaders moved to langchain-community Method: from langchain_community.document_loaders import TextLoader",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/document_loaders.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.document_loaders import TextLoader",
+        "new_value": "from langchain_community.document_loaders import TextLoader",
+        "context": "Document loaders moved to langchain-community",
+        "version_old": "0.1.0",
+        "version_new": "0.2.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0011",
+      "question": "How do you import RecursiveCharacterTextSplitter in LangChain v0.2?",
+      "answer_v1": "from langchain.text_splitter import RecursiveCharacterTextSplitter",
+      "answer_v2": "from langchain_text_splitters import RecursiveCharacterTextSplitter",
+      "evidence_v1": "[LangChain 0.1.0] Text splitters moved to dedicated package Method: from langchain.text_splitter import RecursiveCharacterTextSplitter",
+      "evidence_v2": "[LangChain 0.2.0] Text splitters moved to dedicated package Method: from langchain_text_splitters import RecursiveCharacterTextSplitter",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/text_splitters.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.text_splitter import RecursiveCharacterTextSplitter",
+        "new_value": "from langchain_text_splitters import RecursiveCharacterTextSplitter",
+        "context": "Text splitters moved to dedicated package",
+        "version_old": "0.1.0",
+        "version_new": "0.2.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0012",
+      "question": "How do you create a ReAct agent in LangChain v0.1+?",
+      "answer_v1": "initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT)",
+      "answer_v2": "create_react_agent(llm, tools, prompt)",
+      "evidence_v1": "[LangChain 0.0.350] Agent creation refactored with explicit prompt Method: initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT)",
+      "evidence_v2": "[LangChain 0.1.0] Agent creation refactored with explicit prompt Method: create_react_agent(llm, tools, prompt)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/agent_creation.md",
+        "change_type": "behavior_changed",
+        "old_value": "initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT)",
+        "new_value": "create_react_agent(llm, tools, prompt)",
+        "context": "Agent creation refactored with explicit prompt",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0013",
+      "question": "How do you execute an agent in LangChain v0.1+?",
+      "answer_v1": "agent.run(query)",
+      "answer_v2": "AgentExecutor(agent, tools).invoke({'input': query})",
+      "evidence_v1": "[LangChain 0.0.350] AgentExecutor required for running agents Method: agent.run(query)",
+      "evidence_v2": "[LangChain 0.1.0] AgentExecutor required for running agents Method: AgentExecutor(agent, tools).invoke({'input': query})",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/agent_execution.md",
+        "change_type": "behavior_changed",
+        "old_value": "agent.run(query)",
+        "new_value": "AgentExecutor(agent, tools).invoke({'input': query})",
+        "context": "AgentExecutor required for running agents",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0014",
+      "question": "How do you import the @tool decorator in LangChain v0.1+?",
+      "answer_v1": "from langchain.agents import tool",
+      "answer_v2": "from langchain_core.tools import tool",
+      "evidence_v1": "[LangChain 0.0.350] Tool decorator moved to langchain-core Method: from langchain.agents import tool",
+      "evidence_v2": "[LangChain 0.1.0] Tool decorator moved to langchain-core Method: from langchain_core.tools import tool",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/tool_decorator.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.agents import tool",
+        "new_value": "from langchain_core.tools import tool",
+        "context": "Tool decorator moved to langchain-core",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0015",
+      "question": "How do you create a RAG chain in LangChain v0.1+?",
+      "answer_v1": "RetrievalQA.from_chain_type(llm, retriever=retriever)",
+      "answer_v2": "create_retrieval_chain(retriever, combine_docs_chain)",
+      "evidence_v1": "[LangChain 0.0.300] RAG chains refactored for LCEL Method: RetrievalQA.from_chain_type(llm, retriever=retriever)",
+      "evidence_v2": "[LangChain 0.1.0] RAG chains refactored for LCEL Method: create_retrieval_chain(retriever, combine_docs_chain)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/rag_chain_creation.md",
+        "change_type": "behavior_changed",
+        "old_value": "RetrievalQA.from_chain_type(llm, retriever=retriever)",
+        "new_value": "create_retrieval_chain(retriever, combine_docs_chain)",
+        "context": "RAG chains refactored for LCEL",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "hard",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0016",
+      "question": "What does similarity_search return in LangChain?",
+      "answer_v1": "vectorstore.similarity_search(query, k=4)",
+      "answer_v2": "vectorstore.similarity_search(query, k=4) # unchanged but returns List[Document]",
+      "evidence_v1": "[LangChain 0.0.300] Return type standardized to List[Document] Method: vectorstore.similarity_search(query, k=4)",
+      "evidence_v2": "[LangChain 0.1.0] Return type standardized to List[Document] Method: vectorstore.similarity_search(query, k=4) # unchanged but returns List[Document]",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/similarity_search.md",
+        "change_type": "param_renamed",
+        "old_value": "vectorstore.similarity_search(query, k=4)",
+        "new_value": "vectorstore.similarity_search(query, k=4) # unchanged but returns List[Document]",
+        "context": "Return type standardized to List[Document]",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0017",
+      "question": "How do you specify search type when creating a retriever?",
+      "answer_v1": "vectorstore.as_retriever(search_kwargs={'k': 4})",
+      "answer_v2": "vectorstore.as_retriever(search_type='similarity', search_kwargs={'k': 4})",
+      "evidence_v1": "[LangChain 0.0.300] Explicit search_type parameter recommended Method: vectorstore.as_retriever(search_kwargs={'k': 4})",
+      "evidence_v2": "[LangChain 0.1.0] Explicit search_type parameter recommended Method: vectorstore.as_retriever(search_type='similarity', search_kwargs={'k': 4})",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/retriever_creation.md",
+        "change_type": "behavior_changed",
+        "old_value": "vectorstore.as_retriever(search_kwargs={'k': 4})",
+        "new_value": "vectorstore.as_retriever(search_type='similarity', search_kwargs={'k': 4})",
+        "context": "Explicit search_type parameter recommended",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0018",
+      "question": "How do you import PydanticOutputParser in LangChain v0.1+?",
+      "answer_v1": "from langchain.output_parsers import PydanticOutputParser",
+      "answer_v2": "from langchain_core.output_parsers import PydanticOutputParser",
+      "evidence_v1": "[LangChain 0.0.250] Output parsers moved to langchain-core Method: from langchain.output_parsers import PydanticOutputParser",
+      "evidence_v2": "[LangChain 0.1.0] Output parsers moved to langchain-core Method: from langchain_core.output_parsers import PydanticOutputParser",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/pydanticoutputparser_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.output_parsers import PydanticOutputParser",
+        "new_value": "from langchain_core.output_parsers import PydanticOutputParser",
+        "context": "Output parsers moved to langchain-core",
+        "version_old": "0.0.250",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0019",
+      "question": "What parser is recommended for JSON output in LangChain v0.1+?",
+      "answer_v1": "OutputFixingParser with LLM for fixing",
+      "answer_v2": "JsonOutputParser with automatic schema validation",
+      "evidence_v1": "[LangChain 0.0.250] JSON parsing improved with better error handling Method: OutputFixingParser with LLM for fixing",
+      "evidence_v2": "[LangChain 0.1.0] JSON parsing improved with better error handling Method: JsonOutputParser with automatic schema validation",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/json_output_parsing.md",
+        "change_type": "behavior_changed",
+        "old_value": "OutputFixingParser with LLM for fixing",
+        "new_value": "JsonOutputParser with automatic schema validation",
+        "context": "JSON parsing improved with better error handling",
+        "version_old": "0.0.250",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0020",
+      "question": "How do you import ChatPromptTemplate in LangChain v0.1+?",
+      "answer_v1": "from langchain.prompts import ChatPromptTemplate",
+      "answer_v2": "from langchain_core.prompts import ChatPromptTemplate",
+      "evidence_v1": "[LangChain 0.0.200] Prompts moved to langchain-core Method: from langchain.prompts import ChatPromptTemplate",
+      "evidence_v2": "[LangChain 0.1.0] Prompts moved to langchain-core Method: from langchain_core.prompts import ChatPromptTemplate",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/chatprompttemplate_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.prompts import ChatPromptTemplate",
+        "new_value": "from langchain_core.prompts import ChatPromptTemplate",
+        "context": "Prompts moved to langchain-core",
+        "version_old": "0.0.200",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0021",
+      "question": "How do you add a messages placeholder in ChatPromptTemplate?",
+      "answer_v1": "MessagesPlaceholder(variable_name='history')",
+      "answer_v2": "MessagesPlaceholder('history') or ('placeholder', '{history}')",
+      "evidence_v1": "[LangChain 0.0.200] Multiple ways to define message placeholders Method: MessagesPlaceholder(variable_name='history')",
+      "evidence_v2": "[LangChain 0.1.0] Multiple ways to define message placeholders Method: MessagesPlaceholder('history') or ('placeholder', '{history}')",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/message_placeholders.md",
+        "change_type": "behavior_changed",
+        "old_value": "MessagesPlaceholder(variable_name='history')",
+        "new_value": "MessagesPlaceholder('history') or ('placeholder', '{history}')",
+        "context": "Multiple ways to define message placeholders",
+        "version_old": "0.0.200",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0022",
+      "question": "How do you access streamed content in LangChain v0.1+?",
+      "answer_v1": "for chunk in llm.stream(prompt): print(chunk)",
+      "answer_v2": "for chunk in chain.stream(input): print(chunk.content)",
+      "evidence_v1": "[LangChain 0.0.300] Streaming returns AIMessageChunk objects Method: for chunk in llm.stream(prompt): print(chunk)",
+      "evidence_v2": "[LangChain 0.1.0] Streaming returns AIMessageChunk objects Method: for chunk in chain.stream(input): print(chunk.content)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/streaming_output.md",
+        "change_type": "behavior_changed",
+        "old_value": "for chunk in llm.stream(prompt): print(chunk)",
+        "new_value": "for chunk in chain.stream(input): print(chunk.content)",
+        "context": "Streaming returns AIMessageChunk objects",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0023",
+      "question": "What method is used for async streaming in LangChain?",
+      "answer_v1": "async for chunk in llm.astream(prompt)",
+      "answer_v2": "async for chunk in chain.astream(input)",
+      "evidence_v1": "[LangChain 0.0.300] Async streaming uses astream method Method: async for chunk in llm.astream(prompt)",
+      "evidence_v2": "[LangChain 0.1.0] Async streaming uses astream method Method: async for chunk in chain.astream(input)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/async_streaming.md",
+        "change_type": "behavior_changed",
+        "old_value": "async for chunk in llm.astream(prompt)",
+        "new_value": "async for chunk in chain.astream(input)",
+        "context": "Async streaming uses astream method",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0024",
+      "question": "What package is needed for LangSmith tracing in LangChain v0.1+?",
+      "answer_v1": "LANGCHAIN_TRACING_V2=true environment variable",
+      "answer_v2": "LANGCHAIN_TRACING_V2=true with langsmith package",
+      "evidence_v1": "[LangChain 0.0.350] LangSmith tracing requires separate langsmith package Method: LANGCHAIN_TRACING_V2=true environment variable",
+      "evidence_v2": "[LangChain 0.1.0] LangSmith tracing requires separate langsmith package Method: LANGCHAIN_TRACING_V2=true with langsmith package",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/tracing.md",
+        "change_type": "default_changed",
+        "old_value": "LANGCHAIN_TRACING_V2=true environment variable",
+        "new_value": "LANGCHAIN_TRACING_V2=true with langsmith package",
+        "context": "LangSmith tracing requires separate langsmith package",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy",
+      "source": "langchain"
+    },
+    {
+      "task_id": "langchain_organic_0025",
+      "question": "How do you pull prompts from LangChain Hub?",
+      "answer_v1": "from langchain import hub",
+      "answer_v2": "from langchain import hub  # or langchainhub package",
+      "evidence_v1": "[LangChain 0.0.300] Hub functionality may require langchainhub package Method: from langchain import hub",
+      "evidence_v2": "[LangChain 0.1.0] Hub functionality may require langchainhub package Method: from langchain import hub  # or langchainhub package",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/hub_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain import hub",
+        "new_value": "from langchain import hub  # or langchainhub package",
+        "context": "Hub functionality may require langchainhub package",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium",
+      "source": "langchain"
+    },
+    {
+      "task_id": "tool_drift_0000",
+      "question": "How do I search the database for 'machine learning' with a limit of 5 results?",
+      "tool_name": "search_database",
+      "drift_type": "param_renamed",
+      "schema_v1": {
+        "name": "search_database",
+        "parameters": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "limit": {
+            "type": "integer",
+            "default": 10
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "search_database",
+        "parameters": {
+          "search_term": {
+            "type": "string",
+            "description": "Search term to look for"
+          },
+          "limit": {
+            "type": "integer",
+            "default": 10
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "search_database",
+        "args": {
+          "query": "machine learning",
+          "limit": 5
+        }
+      },
+      "correct_call_v2": {
+        "tool": "search_database",
+        "args": {
+          "search_term": "machine learning",
+          "limit": 5
+        }
+      },
+      "context_v1": "[API v1] search_database: {\n  \"name\": \"search_database\",\n  \"parameters\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"Search query\"\n    },\n    \"limit\": {\n      \"type\": \"integer\",\n      \"default\": 10\n    }\n  }\n}",
+      "context_v2": "[API v2] search_database: {\n  \"name\": \"search_database\",\n  \"parameters\": {\n    \"search_term\": {\n      \"type\": \"string\",\n      \"description\": \"Search term to look for\"\n    },\n    \"limit\": {\n      \"type\": \"integer\",\n      \"default\": 10\n    }\n  }\n}\n\nNote: Search parameter renamed from 'query' to 'search_term'",
+      "difficulty": "easy",
+      "source": "tool_api",
+      "answer_v1": "{\"tool\": \"search_database\", \"args\": {\"query\": \"machine learning\", \"limit\": 5}}",
+      "answer_v2": "{\"tool\": \"search_database\", \"args\": {\"search_term\": \"machine learning\", \"limit\": 5}}",
+      "evidence_v1": "[API v1] search_database: {\n  \"name\": \"search_database\",\n  \"parameters\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"Search query\"\n    },\n    \"limit\": {\n      \"type\": \"integer\",\n      \"default\": 10\n    }\n  }\n}",
+      "evidence_v2": "[API v2] search_database: {\n  \"name\": \"search_database\",\n  \"parameters\": {\n    \"search_term\": {\n      \"type\": \"string\",\n      \"description\": \"Search term to look for\"\n    },\n    \"limit\": {\n      \"type\": \"integer\",\n      \"default\": 10\n    }\n  }\n}\n\nNote: Search parameter renamed from 'query' to 'search_term'"
+    },
+    {
+      "task_id": "tool_drift_0001",
+      "question": "Create a new user with username 'john_doe' and password 'secret123'",
+      "tool_name": "create_user",
+      "drift_type": "param_added",
+      "schema_v1": {
+        "name": "create_user",
+        "parameters": {
+          "username": {
+            "type": "string",
+            "required": true
+          },
+          "password": {
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "create_user",
+        "parameters": {
+          "username": {
+            "type": "string",
+            "required": true
+          },
+          "password": {
+            "type": "string",
+            "required": true
+          },
+          "email": {
+            "type": "string",
+            "required": true,
+            "description": "User email for verification"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "create_user",
+        "args": {
+          "username": "john_doe",
+          "password": "secret123"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "create_user",
+        "args": {
+          "username": "john_doe",
+          "password": "secret123",
+          "email": "required_field"
+        }
+      },
+      "context_v1": "[API v1] create_user: {\n  \"name\": \"create_user\",\n  \"parameters\": {\n    \"username\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"password\": {\n      \"type\": \"string\",\n      \"required\": true\n    }\n  }\n}",
+      "context_v2": "[API v2] create_user: {\n  \"name\": \"create_user\",\n  \"parameters\": {\n    \"username\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"password\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"required\": true,\n      \"description\": \"User email for verification\"\n    }\n  }\n}\n\nNote: Required 'email' parameter added to user creation",
+      "difficulty": "medium",
+      "source": "tool_api",
+      "answer_v1": "{\"tool\": \"create_user\", \"args\": {\"username\": \"john_doe\", \"password\": \"secret123\"}}",
+      "answer_v2": "{\"tool\": \"create_user\", \"args\": {\"username\": \"john_doe\", \"password\": \"secret123\", \"email\": \"required_field\"}}",
+      "evidence_v1": "[API v1] create_user: {\n  \"name\": \"create_user\",\n  \"parameters\": {\n    \"username\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"password\": {\n      \"type\": \"string\",\n      \"required\": true\n    }\n  }\n}",
+      "evidence_v2": "[API v2] create_user: {\n  \"name\": \"create_user\",\n  \"parameters\": {\n    \"username\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"password\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"required\": true,\n      \"description\": \"User email for verification\"\n    }\n  }\n}\n\nNote: Required 'email' parameter added to user creation"
+    },
+    {
+      "task_id": "tool_drift_0002",
+      "question": "Calculate the area of a room that is 3 meters by 4 meters",
+      "tool_name": "calculate_area",
+      "drift_type": "unit_changed",
+      "schema_v1": {
+        "name": "calculate_area",
+        "parameters": {
+          "length": {
+            "type": "number",
+            "description": "Length in meters"
+          },
+          "width": {
+            "type": "number",
+            "description": "Width in meters"
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "calculate_area",
+        "parameters": {
+          "length": {
+            "type": "number",
+            "description": "Length in feet"
+          },
+          "width": {
+            "type": "number",
+            "description": "Width in feet"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "calculate_area",
+        "args": {
+          "length": 3,
+          "width": 4
+        }
+      },
+      "correct_call_v2": {
+        "tool": "calculate_area",
+        "args": {
+          "length": 9.84,
+          "width": 13.12
+        }
+      },
+      "context_v1": "[API v1] calculate_area: {\n  \"name\": \"calculate_area\",\n  \"parameters\": {\n    \"length\": {\n      \"type\": \"number\",\n      \"description\": \"Length in meters\"\n    },\n    \"width\": {\n      \"type\": \"number\",\n      \"description\": \"Width in meters\"\n    }\n  }\n}",
+      "context_v2": "[API v2] calculate_area: {\n  \"name\": \"calculate_area\",\n  \"parameters\": {\n    \"length\": {\n      \"type\": \"number\",\n      \"description\": \"Length in feet\"\n    },\n    \"width\": {\n      \"type\": \"number\",\n      \"description\": \"Width in feet\"\n    }\n  }\n}\n\nNote: Input units changed from meters to feet",
+      "difficulty": "hard",
+      "source": "tool_api",
+      "answer_v1": "{\"tool\": \"calculate_area\", \"args\": {\"length\": 3, \"width\": 4}}",
+      "answer_v2": "{\"tool\": \"calculate_area\", \"args\": {\"length\": 9.84, \"width\": 13.12}}",
+      "evidence_v1": "[API v1] calculate_area: {\n  \"name\": \"calculate_area\",\n  \"parameters\": {\n    \"length\": {\n      \"type\": \"number\",\n      \"description\": \"Length in meters\"\n    },\n    \"width\": {\n      \"type\": \"number\",\n      \"description\": \"Width in meters\"\n    }\n  }\n}",
+      "evidence_v2": "[API v2] calculate_area: {\n  \"name\": \"calculate_area\",\n  \"parameters\": {\n    \"length\": {\n      \"type\": \"number\",\n      \"description\": \"Length in feet\"\n    },\n    \"width\": {\n      \"type\": \"number\",\n      \"description\": \"Width in feet\"\n    }\n  }\n}\n\nNote: Input units changed from meters to feet"
+    },
+    {
+      "task_id": "tool_drift_0003",
+      "question": "Set task ABC123 priority to 'urgent'",
+      "tool_name": "set_priority",
+      "drift_type": "type_changed",
+      "schema_v1": {
+        "name": "set_priority",
+        "parameters": {
+          "task_id": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "description": "Priority level (any string)"
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "set_priority",
+        "parameters": {
+          "task_id": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "set_priority",
+        "args": {
+          "task_id": "ABC123",
+          "priority": "urgent"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "set_priority",
+        "args": {
+          "task_id": "ABC123",
+          "priority": "critical"
+        }
+      },
+      "context_v1": "[API v1] set_priority: {\n  \"name\": \"set_priority\",\n  \"parameters\": {\n    \"task_id\": {\n      \"type\": \"string\"\n    },\n    \"priority\": {\n      \"type\": \"string\",\n      \"description\": \"Priority level (any string)\"\n    }\n  }\n}",
+      "context_v2": "[API v2] set_priority: {\n  \"name\": \"set_priority\",\n  \"parameters\": {\n    \"task_id\": {\n      \"type\": \"string\"\n    },\n    \"priority\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"critical\"\n      ]\n    }\n  }\n}\n\nNote: Priority changed from free string to enum",
+      "difficulty": "medium",
+      "source": "tool_api",
+      "answer_v1": "{\"tool\": \"set_priority\", \"args\": {\"task_id\": \"ABC123\", \"priority\": \"urgent\"}}",
+      "answer_v2": "{\"tool\": \"set_priority\", \"args\": {\"task_id\": \"ABC123\", \"priority\": \"critical\"}}",
+      "evidence_v1": "[API v1] set_priority: {\n  \"name\": \"set_priority\",\n  \"parameters\": {\n    \"task_id\": {\n      \"type\": \"string\"\n    },\n    \"priority\": {\n      \"type\": \"string\",\n      \"description\": \"Priority level (any string)\"\n    }\n  }\n}",
+      "evidence_v2": "[API v2] set_priority: {\n  \"name\": \"set_priority\",\n  \"parameters\": {\n    \"task_id\": {\n      \"type\": \"string\"\n    },\n    \"priority\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"critical\"\n      ]\n    }\n  }\n}\n\nNote: Priority changed from free string to enum"
+    },
+    {
+      "task_id": "tool_drift_0004",
+      "question": "Get the email of user with ID 12345",
+      "tool_name": "get_user",
+      "drift_type": "return_changed",
+      "schema_v1": {
+        "name": "get_user",
+        "parameters": {
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "returns": {
+          "name": "string",
+          "email": "string"
+        }
+      },
+      "schema_v2": {
+        "name": "get_user",
+        "parameters": {
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "returns": {
+          "user": {
+            "name": "string",
+            "email": "string"
+          },
+          "metadata": {
+            "created_at": "string"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "get_user",
+        "args": {
+          "user_id": "12345"
+        },
+        "extract": "result.email"
+      },
+      "correct_call_v2": {
+        "tool": "get_user",
+        "args": {
+          "user_id": "12345"
+        },
+        "extract": "result.user.email"
+      },
+      "context_v1": "[API v1] get_user: {\n  \"name\": \"get_user\",\n  \"parameters\": {\n    \"user_id\": {\n      \"type\": \"string\"\n    }\n  },\n  \"returns\": {\n    \"name\": \"string\",\n    \"email\": \"string\"\n  }\n}",
+      "context_v2": "[API v2] get_user: {\n  \"name\": \"get_user\",\n  \"parameters\": {\n    \"user_id\": {\n      \"type\": \"string\"\n    }\n  },\n  \"returns\": {\n    \"user\": {\n      \"name\": \"string\",\n      \"email\": \"string\"\n    },\n    \"metadata\": {\n      \"created_at\": \"string\"\n    }\n  }\n}\n\nNote: Return type changed from flat object to nested object",
+      "difficulty": "hard",
+      "source": "tool_api",
+      "answer_v1": "{\"tool\": \"get_user\", \"args\": {\"user_id\": \"12345\"}, \"extract\": \"result.email\"}",
+      "answer_v2": "{\"tool\": \"get_user\", \"args\": {\"user_id\": \"12345\"}, \"extract\": \"result.user.email\"}",
+      "evidence_v1": "[API v1] get_user: {\n  \"name\": \"get_user\",\n  \"parameters\": {\n    \"user_id\": {\n      \"type\": \"string\"\n    }\n  },\n  \"returns\": {\n    \"name\": \"string\",\n    \"email\": \"string\"\n  }\n}",
+      "evidence_v2": "[API v2] get_user: {\n  \"name\": \"get_user\",\n  \"parameters\": {\n    \"user_id\": {\n      \"type\": \"string\"\n    }\n  },\n  \"returns\": {\n    \"user\": {\n      \"name\": \"string\",\n      \"email\": \"string\"\n    },\n    \"metadata\": {\n      \"created_at\": \"string\"\n    }\n  }\n}\n\nNote: Return type changed from flat object to nested object"
+    },
+    {
+      "task_id": "tool_drift_0005",
+      "question": "List files in /home/user sorted in ascending order",
+      "tool_name": "list_files",
+      "drift_type": "default_changed",
+      "schema_v1": {
+        "name": "list_files",
+        "parameters": {
+          "directory": {
+            "type": "string"
+          },
+          "sort_order": {
+            "type": "string",
+            "default": "asc",
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "list_files",
+        "parameters": {
+          "directory": {
+            "type": "string"
+          },
+          "sort_order": {
+            "type": "string",
+            "default": "desc",
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "list_files",
+        "args": {
+          "directory": "/home/user"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "list_files",
+        "args": {
+          "directory": "/home/user",
+          "sort_order": "asc"
+        }
+      },
+      "context_v1": "[API v1] list_files: {\n  \"name\": \"list_files\",\n  \"parameters\": {\n    \"directory\": {\n      \"type\": \"string\"\n    },\n    \"sort_order\": {\n      \"type\": \"string\",\n      \"default\": \"asc\",\n      \"enum\": [\n        \"asc\",\n        \"desc\"\n      ]\n    }\n  }\n}",
+      "context_v2": "[API v2] list_files: {\n  \"name\": \"list_files\",\n  \"parameters\": {\n    \"directory\": {\n      \"type\": \"string\"\n    },\n    \"sort_order\": {\n      \"type\": \"string\",\n      \"default\": \"desc\",\n      \"enum\": [\n        \"asc\",\n        \"desc\"\n      ]\n    }\n  }\n}\n\nNote: Default sort order changed from ascending to descending",
+      "difficulty": "medium",
+      "source": "tool_api",
+      "answer_v1": "{\"tool\": \"list_files\", \"args\": {\"directory\": \"/home/user\"}}",
+      "answer_v2": "{\"tool\": \"list_files\", \"args\": {\"directory\": \"/home/user\", \"sort_order\": \"asc\"}}",
+      "evidence_v1": "[API v1] list_files: {\n  \"name\": \"list_files\",\n  \"parameters\": {\n    \"directory\": {\n      \"type\": \"string\"\n    },\n    \"sort_order\": {\n      \"type\": \"string\",\n      \"default\": \"asc\",\n      \"enum\": [\n        \"asc\",\n        \"desc\"\n      ]\n    }\n  }\n}",
+      "evidence_v2": "[API v2] list_files: {\n  \"name\": \"list_files\",\n  \"parameters\": {\n    \"directory\": {\n      \"type\": \"string\"\n    },\n    \"sort_order\": {\n      \"type\": \"string\",\n      \"default\": \"desc\",\n      \"enum\": [\n        \"asc\",\n        \"desc\"\n      ]\n    }\n  }\n}\n\nNote: Default sort order changed from ascending to descending"
+    },
+    {
+      "task_id": "tool_drift_0006",
+      "question": "Send a push notification saying 'Meeting in 5 minutes'",
+      "tool_name": "send_notification",
+      "drift_type": "param_removed",
+      "schema_v1": {
+        "name": "send_notification",
+        "parameters": {
+          "message": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "string",
+            "enum": [
+              "email",
+              "sms",
+              "push"
+            ]
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "send_notification",
+        "parameters": {
+          "message": {
+            "type": "string",
+            "description": "Message (channel auto-detected)"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "send_notification",
+        "args": {
+          "message": "Meeting in 5 minutes",
+          "channel": "push"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "send_notification",
+        "args": {
+          "message": "Meeting in 5 minutes"
+        }
+      },
+      "context_v1": "[API v1] send_notification: {\n  \"name\": \"send_notification\",\n  \"parameters\": {\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"channel\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"email\",\n        \"sms\",\n        \"push\"\n      ]\n    }\n  }\n}",
+      "context_v2": "[API v2] send_notification: {\n  \"name\": \"send_notification\",\n  \"parameters\": {\n    \"message\": {\n      \"type\": \"string\",\n      \"description\": \"Message (channel auto-detected)\"\n    }\n  }\n}\n\nNote: Channel parameter removed, now auto-detected from content",
+      "difficulty": "easy",
+      "source": "tool_api",
+      "answer_v1": "{\"tool\": \"send_notification\", \"args\": {\"message\": \"Meeting in 5 minutes\", \"channel\": \"push\"}}",
+      "answer_v2": "{\"tool\": \"send_notification\", \"args\": {\"message\": \"Meeting in 5 minutes\"}}",
+      "evidence_v1": "[API v1] send_notification: {\n  \"name\": \"send_notification\",\n  \"parameters\": {\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"channel\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"email\",\n        \"sms\",\n        \"push\"\n      ]\n    }\n  }\n}",
+      "evidence_v2": "[API v2] send_notification: {\n  \"name\": \"send_notification\",\n  \"parameters\": {\n    \"message\": {\n      \"type\": \"string\",\n      \"description\": \"Message (channel auto-detected)\"\n    }\n  }\n}\n\nNote: Channel parameter removed, now auto-detected from content"
+    },
+    {
+      "task_id": "tool_drift_0007",
+      "question": "What's the weather in New York?",
+      "tool_name": "get_weather",
+      "drift_type": "tool_renamed",
+      "schema_v1": {
+        "name": "get_weather",
+        "parameters": {
+          "city": {
+            "type": "string"
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "fetch_weather_data",
+        "parameters": {
+          "city": {
+            "type": "string"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "fetch_weather_data",
+        "args": {
+          "city": "New York"
+        }
+      },
+      "context_v1": "[API v1] get_weather: {\n  \"name\": \"get_weather\",\n  \"parameters\": {\n    \"city\": {\n      \"type\": \"string\"\n    }\n  }\n}",
+      "context_v2": "[API v2] get_weather: {\n  \"name\": \"fetch_weather_data\",\n  \"parameters\": {\n    \"city\": {\n      \"type\": \"string\"\n    }\n  }\n}\n\nNote: Tool renamed from get_weather to fetch_weather_data",
+      "difficulty": "medium",
+      "source": "tool_api",
+      "answer_v1": "{\"tool\": \"get_weather\", \"args\": {\"city\": \"New York\"}}",
+      "answer_v2": "{\"tool\": \"fetch_weather_data\", \"args\": {\"city\": \"New York\"}}",
+      "evidence_v1": "[API v1] get_weather: {\n  \"name\": \"get_weather\",\n  \"parameters\": {\n    \"city\": {\n      \"type\": \"string\"\n    }\n  }\n}",
+      "evidence_v2": "[API v2] get_weather: {\n  \"name\": \"fetch_weather_data\",\n  \"parameters\": {\n    \"city\": {\n      \"type\": \"string\"\n    }\n  }\n}\n\nNote: Tool renamed from get_weather to fetch_weather_data"
+    },
+    {
+      "task_id": "tool_drift_0008",
+      "question": "Process 500 items in the batch processor",
+      "tool_name": "batch_process",
+      "drift_type": "constraint_added",
+      "schema_v1": {
+        "name": "batch_process",
+        "parameters": {
+          "items": {
+            "type": "array",
+            "maxItems": 1000
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "batch_process",
+        "parameters": {
+          "items": {
+            "type": "array",
+            "maxItems": 100,
+            "description": "Max 100 items per batch"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "batch_process",
+        "args": {
+          "items": "[500 items]"
+        },
+        "valid": true
+      },
+      "correct_call_v2": {
+        "tool": "batch_process",
+        "args": {
+          "items": "[100 items x 5 batches]"
+        },
+        "valid": true,
+        "note": "Must split into 5 batches"
+      },
+      "context_v1": "[API v1] batch_process: {\n  \"name\": \"batch_process\",\n  \"parameters\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"maxItems\": 1000\n    }\n  }\n}",
+      "context_v2": "[API v2] batch_process: {\n  \"name\": \"batch_process\",\n  \"parameters\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"maxItems\": 100,\n      \"description\": \"Max 100 items per batch\"\n    }\n  }\n}\n\nNote: Maximum batch size reduced from 1000 to 100",
+      "difficulty": "hard",
+      "source": "tool_api",
+      "answer_v1": "{\"tool\": \"batch_process\", \"args\": {\"items\": \"[500 items]\"}, \"valid\": true}",
+      "answer_v2": "{\"tool\": \"batch_process\", \"args\": {\"items\": \"[100 items x 5 batches]\"}, \"valid\": true, \"note\": \"Must split into 5 batches\"}",
+      "evidence_v1": "[API v1] batch_process: {\n  \"name\": \"batch_process\",\n  \"parameters\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"maxItems\": 1000\n    }\n  }\n}",
+      "evidence_v2": "[API v2] batch_process: {\n  \"name\": \"batch_process\",\n  \"parameters\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"maxItems\": 100,\n      \"description\": \"Max 100 items per batch\"\n    }\n  }\n}\n\nNote: Maximum batch size reduced from 1000 to 100"
+    },
+    {
+      "task_id": "tool_drift_0009",
+      "question": "Access resource RES001 with my API key 'abc123'",
+      "tool_name": "access_resource",
+      "drift_type": "auth_changed",
+      "schema_v1": {
+        "name": "access_resource",
+        "parameters": {
+          "resource_id": {
+            "type": "string"
+          },
+          "api_key": {
+            "type": "string",
+            "description": "API key for authentication"
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "access_resource",
+        "parameters": {
+          "resource_id": {
+            "type": "string"
+          },
+          "bearer_token": {
+            "type": "string",
+            "description": "OAuth2 bearer token"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "access_resource",
+        "args": {
+          "resource_id": "RES001",
+          "api_key": "abc123"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "access_resource",
+        "args": {
+          "resource_id": "RES001",
+          "bearer_token": "oauth_token_here"
+        },
+        "note": "Must use OAuth token, not API key"
+      },
+      "context_v1": "[API v1] access_resource: {\n  \"name\": \"access_resource\",\n  \"parameters\": {\n    \"resource_id\": {\n      \"type\": \"string\"\n    },\n    \"api_key\": {\n      \"type\": \"string\",\n      \"description\": \"API key for authentication\"\n    }\n  }\n}",
+      "context_v2": "[API v2] access_resource: {\n  \"name\": \"access_resource\",\n  \"parameters\": {\n    \"resource_id\": {\n      \"type\": \"string\"\n    },\n    \"bearer_token\": {\n      \"type\": \"string\",\n      \"description\": \"OAuth2 bearer token\"\n    }\n  }\n}\n\nNote: Auth changed from API key to OAuth token",
+      "difficulty": "hard",
+      "source": "tool_api",
+      "answer_v1": "{\"tool\": \"access_resource\", \"args\": {\"resource_id\": \"RES001\", \"api_key\": \"abc123\"}}",
+      "answer_v2": "{\"tool\": \"access_resource\", \"args\": {\"resource_id\": \"RES001\", \"bearer_token\": \"oauth_token_here\"}, \"note\": \"Must use OAuth token, not API key\"}",
+      "evidence_v1": "[API v1] access_resource: {\n  \"name\": \"access_resource\",\n  \"parameters\": {\n    \"resource_id\": {\n      \"type\": \"string\"\n    },\n    \"api_key\": {\n      \"type\": \"string\",\n      \"description\": \"API key for authentication\"\n    }\n  }\n}",
+      "evidence_v2": "[API v2] access_resource: {\n  \"name\": \"access_resource\",\n  \"parameters\": {\n    \"resource_id\": {\n      \"type\": \"string\"\n    },\n    \"bearer_token\": {\n      \"type\": \"string\",\n      \"description\": \"OAuth2 bearer token\"\n    }\n  }\n}\n\nNote: Auth changed from API key to OAuth token"
+    }
+  ]
+}

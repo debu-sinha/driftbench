@@ -1,0 +1,3340 @@
+{
+  "experiment": "DRIFTBENCH Full Experiment",
+  "timestamp": "2025-12-25T12:32:16.064495",
+  "n_tasks": 77,
+  "model": "gpt-4o-mini",
+  "results": {
+    "term_rag_v1": {
+      "n": 77,
+      "accuracy": {
+        "mean": 0.6493506493506493,
+        "ci_lower": 0.5324675324675324,
+        "ci_upper": 0.7405844155844153
+      },
+      "sfr": {
+        "mean": 0.11688311688311688,
+        "ci_lower": 0.05194805194805195,
+        "ci_upper": 0.19480519480519481
+      }
+    },
+    "term_rag_v2": {
+      "n": 77,
+      "accuracy": {
+        "mean": 0.7012987012987013,
+        "ci_lower": 0.5974025974025974,
+        "ci_upper": 0.7922077922077922
+      },
+      "sfr": {
+        "mean": 0.11688311688311688,
+        "ci_lower": 0.05194805194805195,
+        "ci_upper": 0.19480519480519481
+      }
+    },
+    "dense_rag_v1": {
+      "n": 77,
+      "accuracy": {
+        "mean": 0.8051948051948052,
+        "ci_lower": 0.7142857142857143,
+        "ci_upper": 0.8831168831168831
+      },
+      "sfr": {
+        "mean": 0.14285714285714285,
+        "ci_lower": 0.06493506493506493,
+        "ci_upper": 0.23376623376623376
+      }
+    },
+    "dense_rag_v2": {
+      "n": 77,
+      "accuracy": {
+        "mean": 0.8571428571428571,
+        "ci_lower": 0.7662337662337663,
+        "ci_upper": 0.935064935064935
+      },
+      "sfr": {
+        "mean": 0.1038961038961039,
+        "ci_lower": 0.03896103896103896,
+        "ci_upper": 0.18181818181818182
+      }
+    },
+    "oracle_v1": {
+      "n": 77,
+      "accuracy": {
+        "mean": 0.8051948051948052,
+        "ci_lower": 0.7142857142857143,
+        "ci_upper": 0.8831168831168831
+      },
+      "sfr": {
+        "mean": 0.15584415584415584,
+        "ci_lower": 0.07792207792207792,
+        "ci_upper": 0.24675324675324675
+      }
+    },
+    "oracle_v2": {
+      "n": 77,
+      "accuracy": {
+        "mean": 0.8701298701298701,
+        "ci_lower": 0.7922077922077922,
+        "ci_upper": 0.935064935064935
+      },
+      "sfr": {
+        "mean": 0.07792207792207792,
+        "ci_lower": 0.025974025974025976,
+        "ci_upper": 0.14285714285714285
+      }
+    }
+  },
+  "raw_results": {
+    "term_rag_v1": [
+      {
+        "task_id": "fastapi_organic_0000",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0001",
+        "correct": true,
+        "confidence": 0.2,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0002",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0003",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0004",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0005",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0006",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0007",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0008",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0009",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0010",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0012",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0013",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0014",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0015",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0016",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0017",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0018",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0019",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0020",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0021",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0022",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0024",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0025",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0026",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0027",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0028",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0029",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0030",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0031",
+        "correct": true,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0032",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0033",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0034",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0035",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0036",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0037",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0038",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0039",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_multihop_0040",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0000",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0001",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0002",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0003",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0004",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0005",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0006",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0007",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0008",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0009",
+        "correct": true,
+        "confidence": 0.5,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0010",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0012",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0013",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0014",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0015",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0016",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0017",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0018",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0019",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0020",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0021",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0022",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0024",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0025",
+        "correct": true,
+        "confidence": 0.2,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0000",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0001",
+        "correct": false,
+        "confidence": 0.5,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0002",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0003",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0004",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0005",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0006",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0007",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0008",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0009",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      }
+    ],
+    "term_rag_v2": [
+      {
+        "task_id": "fastapi_organic_0000",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0001",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0002",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0003",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0004",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0005",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0006",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0007",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0008",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0009",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0010",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0012",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0013",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0014",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0015",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0016",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0017",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0018",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0019",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0020",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0021",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0022",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0024",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0025",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0026",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0027",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0028",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0029",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0030",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0031",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0032",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0033",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0034",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0035",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0036",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0037",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0038",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0039",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_multihop_0040",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0000",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0001",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0002",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0003",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0004",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0005",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0006",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0007",
+        "correct": true,
+        "confidence": 0.5,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0008",
+        "correct": true,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0009",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0010",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0012",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0013",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0014",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0015",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0016",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0017",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0018",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0019",
+        "correct": false,
+        "confidence": 0.5,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0020",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0021",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0022",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0024",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0025",
+        "correct": true,
+        "confidence": 0.2,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0000",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0001",
+        "correct": false,
+        "confidence": 0.5,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0002",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0003",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0004",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0005",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0006",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0007",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0008",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0009",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      }
+    ],
+    "dense_rag_v1": [
+      {
+        "task_id": "fastapi_organic_0000",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0001",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0002",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0003",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0004",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0005",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0006",
+        "correct": false,
+        "confidence": 0.2,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0007",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0008",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0009",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0010",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0012",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0013",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0014",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0015",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0016",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0017",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0018",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0019",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0020",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0021",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0022",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0024",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0025",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0026",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0027",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0028",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0029",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0030",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0031",
+        "correct": true,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0032",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0033",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0034",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0035",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0036",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0037",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0038",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0039",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_multihop_0040",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0000",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0001",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0002",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0003",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0004",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0005",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0006",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0007",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0008",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0009",
+        "correct": true,
+        "confidence": 0.5,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0010",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0012",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0013",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0014",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0015",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0016",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0017",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0018",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0019",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0020",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0021",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0022",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0023",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0024",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0025",
+        "correct": true,
+        "confidence": 0.7,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0000",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0001",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0002",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0003",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0004",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0005",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0006",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1",
+        "error": "'dict' object has no attribute 'lower'"
+      },
+      {
+        "task_id": "tool_drift_0007",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0008",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0009",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      }
+    ],
+    "dense_rag_v2": [
+      {
+        "task_id": "fastapi_organic_0000",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0001",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0002",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0003",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0004",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0005",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0006",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0007",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0008",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0009",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0010",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0012",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0013",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0014",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0015",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0016",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0017",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0018",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0019",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0020",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0021",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0022",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0024",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0025",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0026",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0027",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0028",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0029",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0030",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0031",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0032",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0033",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0034",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0035",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0036",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0037",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0038",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0039",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_multihop_0040",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0000",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0001",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0002",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0003",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0004",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0005",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0006",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0007",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0008",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0009",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0010",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0012",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0013",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0014",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0015",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0016",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0017",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0018",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0019",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0020",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0021",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0022",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0024",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0025",
+        "correct": true,
+        "confidence": 0.7,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0000",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0001",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0002",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0003",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0004",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0005",
+        "correct": true,
+        "confidence": 0.5,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0006",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0007",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0008",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0009",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      }
+    ],
+    "oracle_v1": [
+      {
+        "task_id": "fastapi_organic_0000",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0001",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0002",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0003",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0004",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0005",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0006",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0007",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0008",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0009",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0010",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0012",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0013",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0014",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0015",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0016",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0017",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0018",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0019",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0020",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0021",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0022",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0024",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0025",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0026",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0027",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0028",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0029",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0030",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0031",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0032",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0033",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0034",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0035",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0036",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0037",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0038",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_organic_0039",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "fastapi_multihop_0040",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0000",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0001",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0002",
+        "correct": true,
+        "confidence": 0.7,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0003",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0004",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0005",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0006",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0007",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0008",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0009",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0010",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0012",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0013",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0014",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0015",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0016",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0017",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0018",
+        "correct": true,
+        "confidence": 0.7,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0019",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0020",
+        "correct": true,
+        "confidence": 0.7,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0021",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0022",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0024",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "langchain_organic_0025",
+        "correct": true,
+        "confidence": 0.6,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0000",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0001",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0002",
+        "correct": false,
+        "confidence": 1.0,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0003",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0004",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0005",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0006",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1",
+        "error": "'dict' object has no attribute 'lower'"
+      },
+      {
+        "task_id": "tool_drift_0007",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0008",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v1"
+      },
+      {
+        "task_id": "tool_drift_0009",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v1"
+      }
+    ],
+    "oracle_v2": [
+      {
+        "task_id": "fastapi_organic_0000",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0001",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0002",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0003",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0004",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0005",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0006",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0007",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0008",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0009",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0010",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0012",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0013",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0014",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0015",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0016",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0017",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0018",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0019",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0020",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0021",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0022",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0024",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0025",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0026",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0027",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0028",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0029",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0030",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0031",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0032",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0033",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0034",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0035",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0036",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0037",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0038",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_organic_0039",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "fastapi_multihop_0040",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0000",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0001",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0002",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0003",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0004",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0005",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0006",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0007",
+        "correct": false,
+        "confidence": 0.8,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0008",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0009",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0010",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0011",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0012",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0013",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0014",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0015",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0016",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0017",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0018",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0019",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0020",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0021",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0022",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0023",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0024",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "langchain_organic_0025",
+        "correct": true,
+        "confidence": 0.8,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0000",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0001",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0002",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0003",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0004",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0005",
+        "correct": false,
+        "confidence": 0.9,
+        "silent_failure": true,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0006",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0007",
+        "correct": false,
+        "confidence": 0.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0008",
+        "correct": true,
+        "confidence": 1.0,
+        "silent_failure": false,
+        "version": "v2"
+      },
+      {
+        "task_id": "tool_drift_0009",
+        "correct": true,
+        "confidence": 0.9,
+        "silent_failure": false,
+        "version": "v2"
+      }
+    ]
+  },
+  "key_findings": {
+    "accuracy_drop": -0.051948051948051965,
+    "oracle_gap": 0.16883116883116878
+  }
+}

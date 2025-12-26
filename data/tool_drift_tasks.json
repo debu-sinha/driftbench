@@ -1,0 +1,506 @@
+{
+  "name": "DRIFTBENCH-ToolDrift",
+  "version": "0.1",
+  "created": "2025-12-25T10:03:49.645528",
+  "n_tasks": 10,
+  "drift_types": {
+    "param_renamed": 1,
+    "param_added": 1,
+    "param_removed": 1,
+    "unit_changed": 1,
+    "type_changed": 1,
+    "default_changed": 1,
+    "return_changed": 1,
+    "tool_renamed": 1,
+    "constraint_added": 1,
+    "auth_changed": 1
+  },
+  "tasks": [
+    {
+      "task_id": "tool_drift_0000",
+      "question": "How do I search the database for 'machine learning' with a limit of 5 results?",
+      "tool_name": "search_database",
+      "drift_type": "param_renamed",
+      "schema_v1": {
+        "name": "search_database",
+        "parameters": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "limit": {
+            "type": "integer",
+            "default": 10
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "search_database",
+        "parameters": {
+          "search_term": {
+            "type": "string",
+            "description": "Search term to look for"
+          },
+          "limit": {
+            "type": "integer",
+            "default": 10
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "search_database",
+        "args": {
+          "query": "machine learning",
+          "limit": 5
+        }
+      },
+      "correct_call_v2": {
+        "tool": "search_database",
+        "args": {
+          "search_term": "machine learning",
+          "limit": 5
+        }
+      },
+      "context_v1": "[API v1] search_database: {\n  \"name\": \"search_database\",\n  \"parameters\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"Search query\"\n    },\n    \"limit\": {\n      \"type\": \"integer\",\n      \"default\": 10\n    }\n  }\n}",
+      "context_v2": "[API v2] search_database: {\n  \"name\": \"search_database\",\n  \"parameters\": {\n    \"search_term\": {\n      \"type\": \"string\",\n      \"description\": \"Search term to look for\"\n    },\n    \"limit\": {\n      \"type\": \"integer\",\n      \"default\": 10\n    }\n  }\n}\n\nNote: Search parameter renamed from 'query' to 'search_term'",
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "tool_drift_0001",
+      "question": "Create a new user with username 'john_doe' and password 'secret123'",
+      "tool_name": "create_user",
+      "drift_type": "param_added",
+      "schema_v1": {
+        "name": "create_user",
+        "parameters": {
+          "username": {
+            "type": "string",
+            "required": true
+          },
+          "password": {
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "create_user",
+        "parameters": {
+          "username": {
+            "type": "string",
+            "required": true
+          },
+          "password": {
+            "type": "string",
+            "required": true
+          },
+          "email": {
+            "type": "string",
+            "required": true,
+            "description": "User email for verification"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "create_user",
+        "args": {
+          "username": "john_doe",
+          "password": "secret123"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "create_user",
+        "args": {
+          "username": "john_doe",
+          "password": "secret123",
+          "email": "required_field"
+        }
+      },
+      "context_v1": "[API v1] create_user: {\n  \"name\": \"create_user\",\n  \"parameters\": {\n    \"username\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"password\": {\n      \"type\": \"string\",\n      \"required\": true\n    }\n  }\n}",
+      "context_v2": "[API v2] create_user: {\n  \"name\": \"create_user\",\n  \"parameters\": {\n    \"username\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"password\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"required\": true,\n      \"description\": \"User email for verification\"\n    }\n  }\n}\n\nNote: Required 'email' parameter added to user creation",
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "tool_drift_0002",
+      "question": "Calculate the area of a room that is 3 meters by 4 meters",
+      "tool_name": "calculate_area",
+      "drift_type": "unit_changed",
+      "schema_v1": {
+        "name": "calculate_area",
+        "parameters": {
+          "length": {
+            "type": "number",
+            "description": "Length in meters"
+          },
+          "width": {
+            "type": "number",
+            "description": "Width in meters"
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "calculate_area",
+        "parameters": {
+          "length": {
+            "type": "number",
+            "description": "Length in feet"
+          },
+          "width": {
+            "type": "number",
+            "description": "Width in feet"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "calculate_area",
+        "args": {
+          "length": 3,
+          "width": 4
+        }
+      },
+      "correct_call_v2": {
+        "tool": "calculate_area",
+        "args": {
+          "length": 9.84,
+          "width": 13.12
+        }
+      },
+      "context_v1": "[API v1] calculate_area: {\n  \"name\": \"calculate_area\",\n  \"parameters\": {\n    \"length\": {\n      \"type\": \"number\",\n      \"description\": \"Length in meters\"\n    },\n    \"width\": {\n      \"type\": \"number\",\n      \"description\": \"Width in meters\"\n    }\n  }\n}",
+      "context_v2": "[API v2] calculate_area: {\n  \"name\": \"calculate_area\",\n  \"parameters\": {\n    \"length\": {\n      \"type\": \"number\",\n      \"description\": \"Length in feet\"\n    },\n    \"width\": {\n      \"type\": \"number\",\n      \"description\": \"Width in feet\"\n    }\n  }\n}\n\nNote: Input units changed from meters to feet",
+      "difficulty": "hard"
+    },
+    {
+      "task_id": "tool_drift_0003",
+      "question": "Set task ABC123 priority to 'urgent'",
+      "tool_name": "set_priority",
+      "drift_type": "type_changed",
+      "schema_v1": {
+        "name": "set_priority",
+        "parameters": {
+          "task_id": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "description": "Priority level (any string)"
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "set_priority",
+        "parameters": {
+          "task_id": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "set_priority",
+        "args": {
+          "task_id": "ABC123",
+          "priority": "urgent"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "set_priority",
+        "args": {
+          "task_id": "ABC123",
+          "priority": "critical"
+        }
+      },
+      "context_v1": "[API v1] set_priority: {\n  \"name\": \"set_priority\",\n  \"parameters\": {\n    \"task_id\": {\n      \"type\": \"string\"\n    },\n    \"priority\": {\n      \"type\": \"string\",\n      \"description\": \"Priority level (any string)\"\n    }\n  }\n}",
+      "context_v2": "[API v2] set_priority: {\n  \"name\": \"set_priority\",\n  \"parameters\": {\n    \"task_id\": {\n      \"type\": \"string\"\n    },\n    \"priority\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"critical\"\n      ]\n    }\n  }\n}\n\nNote: Priority changed from free string to enum",
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "tool_drift_0004",
+      "question": "Get the email of user with ID 12345",
+      "tool_name": "get_user",
+      "drift_type": "return_changed",
+      "schema_v1": {
+        "name": "get_user",
+        "parameters": {
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "returns": {
+          "name": "string",
+          "email": "string"
+        }
+      },
+      "schema_v2": {
+        "name": "get_user",
+        "parameters": {
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "returns": {
+          "user": {
+            "name": "string",
+            "email": "string"
+          },
+          "metadata": {
+            "created_at": "string"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "get_user",
+        "args": {
+          "user_id": "12345"
+        },
+        "extract": "result.email"
+      },
+      "correct_call_v2": {
+        "tool": "get_user",
+        "args": {
+          "user_id": "12345"
+        },
+        "extract": "result.user.email"
+      },
+      "context_v1": "[API v1] get_user: {\n  \"name\": \"get_user\",\n  \"parameters\": {\n    \"user_id\": {\n      \"type\": \"string\"\n    }\n  },\n  \"returns\": {\n    \"name\": \"string\",\n    \"email\": \"string\"\n  }\n}",
+      "context_v2": "[API v2] get_user: {\n  \"name\": \"get_user\",\n  \"parameters\": {\n    \"user_id\": {\n      \"type\": \"string\"\n    }\n  },\n  \"returns\": {\n    \"user\": {\n      \"name\": \"string\",\n      \"email\": \"string\"\n    },\n    \"metadata\": {\n      \"created_at\": \"string\"\n    }\n  }\n}\n\nNote: Return type changed from flat object to nested object",
+      "difficulty": "hard"
+    },
+    {
+      "task_id": "tool_drift_0005",
+      "question": "List files in /home/user sorted in ascending order",
+      "tool_name": "list_files",
+      "drift_type": "default_changed",
+      "schema_v1": {
+        "name": "list_files",
+        "parameters": {
+          "directory": {
+            "type": "string"
+          },
+          "sort_order": {
+            "type": "string",
+            "default": "asc",
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "list_files",
+        "parameters": {
+          "directory": {
+            "type": "string"
+          },
+          "sort_order": {
+            "type": "string",
+            "default": "desc",
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "list_files",
+        "args": {
+          "directory": "/home/user"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "list_files",
+        "args": {
+          "directory": "/home/user",
+          "sort_order": "asc"
+        }
+      },
+      "context_v1": "[API v1] list_files: {\n  \"name\": \"list_files\",\n  \"parameters\": {\n    \"directory\": {\n      \"type\": \"string\"\n    },\n    \"sort_order\": {\n      \"type\": \"string\",\n      \"default\": \"asc\",\n      \"enum\": [\n        \"asc\",\n        \"desc\"\n      ]\n    }\n  }\n}",
+      "context_v2": "[API v2] list_files: {\n  \"name\": \"list_files\",\n  \"parameters\": {\n    \"directory\": {\n      \"type\": \"string\"\n    },\n    \"sort_order\": {\n      \"type\": \"string\",\n      \"default\": \"desc\",\n      \"enum\": [\n        \"asc\",\n        \"desc\"\n      ]\n    }\n  }\n}\n\nNote: Default sort order changed from ascending to descending",
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "tool_drift_0006",
+      "question": "Send a push notification saying 'Meeting in 5 minutes'",
+      "tool_name": "send_notification",
+      "drift_type": "param_removed",
+      "schema_v1": {
+        "name": "send_notification",
+        "parameters": {
+          "message": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "string",
+            "enum": [
+              "email",
+              "sms",
+              "push"
+            ]
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "send_notification",
+        "parameters": {
+          "message": {
+            "type": "string",
+            "description": "Message (channel auto-detected)"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "send_notification",
+        "args": {
+          "message": "Meeting in 5 minutes",
+          "channel": "push"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "send_notification",
+        "args": {
+          "message": "Meeting in 5 minutes"
+        }
+      },
+      "context_v1": "[API v1] send_notification: {\n  \"name\": \"send_notification\",\n  \"parameters\": {\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"channel\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"email\",\n        \"sms\",\n        \"push\"\n      ]\n    }\n  }\n}",
+      "context_v2": "[API v2] send_notification: {\n  \"name\": \"send_notification\",\n  \"parameters\": {\n    \"message\": {\n      \"type\": \"string\",\n      \"description\": \"Message (channel auto-detected)\"\n    }\n  }\n}\n\nNote: Channel parameter removed, now auto-detected from content",
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "tool_drift_0007",
+      "question": "What's the weather in New York?",
+      "tool_name": "get_weather",
+      "drift_type": "tool_renamed",
+      "schema_v1": {
+        "name": "get_weather",
+        "parameters": {
+          "city": {
+            "type": "string"
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "fetch_weather_data",
+        "parameters": {
+          "city": {
+            "type": "string"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "fetch_weather_data",
+        "args": {
+          "city": "New York"
+        }
+      },
+      "context_v1": "[API v1] get_weather: {\n  \"name\": \"get_weather\",\n  \"parameters\": {\n    \"city\": {\n      \"type\": \"string\"\n    }\n  }\n}",
+      "context_v2": "[API v2] get_weather: {\n  \"name\": \"fetch_weather_data\",\n  \"parameters\": {\n    \"city\": {\n      \"type\": \"string\"\n    }\n  }\n}\n\nNote: Tool renamed from get_weather to fetch_weather_data",
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "tool_drift_0008",
+      "question": "Process 500 items in the batch processor",
+      "tool_name": "batch_process",
+      "drift_type": "constraint_added",
+      "schema_v1": {
+        "name": "batch_process",
+        "parameters": {
+          "items": {
+            "type": "array",
+            "maxItems": 1000
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "batch_process",
+        "parameters": {
+          "items": {
+            "type": "array",
+            "maxItems": 100,
+            "description": "Max 100 items per batch"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "batch_process",
+        "args": {
+          "items": "[500 items]"
+        },
+        "valid": true
+      },
+      "correct_call_v2": {
+        "tool": "batch_process",
+        "args": {
+          "items": "[100 items x 5 batches]"
+        },
+        "valid": true,
+        "note": "Must split into 5 batches"
+      },
+      "context_v1": "[API v1] batch_process: {\n  \"name\": \"batch_process\",\n  \"parameters\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"maxItems\": 1000\n    }\n  }\n}",
+      "context_v2": "[API v2] batch_process: {\n  \"name\": \"batch_process\",\n  \"parameters\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"maxItems\": 100,\n      \"description\": \"Max 100 items per batch\"\n    }\n  }\n}\n\nNote: Maximum batch size reduced from 1000 to 100",
+      "difficulty": "hard"
+    },
+    {
+      "task_id": "tool_drift_0009",
+      "question": "Access resource RES001 with my API key 'abc123'",
+      "tool_name": "access_resource",
+      "drift_type": "auth_changed",
+      "schema_v1": {
+        "name": "access_resource",
+        "parameters": {
+          "resource_id": {
+            "type": "string"
+          },
+          "api_key": {
+            "type": "string",
+            "description": "API key for authentication"
+          }
+        }
+      },
+      "schema_v2": {
+        "name": "access_resource",
+        "parameters": {
+          "resource_id": {
+            "type": "string"
+          },
+          "bearer_token": {
+            "type": "string",
+            "description": "OAuth2 bearer token"
+          }
+        }
+      },
+      "correct_call_v1": {
+        "tool": "access_resource",
+        "args": {
+          "resource_id": "RES001",
+          "api_key": "abc123"
+        }
+      },
+      "correct_call_v2": {
+        "tool": "access_resource",
+        "args": {
+          "resource_id": "RES001",
+          "bearer_token": "oauth_token_here"
+        },
+        "note": "Must use OAuth token, not API key"
+      },
+      "context_v1": "[API v1] access_resource: {\n  \"name\": \"access_resource\",\n  \"parameters\": {\n    \"resource_id\": {\n      \"type\": \"string\"\n    },\n    \"api_key\": {\n      \"type\": \"string\",\n      \"description\": \"API key for authentication\"\n    }\n  }\n}",
+      "context_v2": "[API v2] access_resource: {\n  \"name\": \"access_resource\",\n  \"parameters\": {\n    \"resource_id\": {\n      \"type\": \"string\"\n    },\n    \"bearer_token\": {\n      \"type\": \"string\",\n      \"description\": \"OAuth2 bearer token\"\n    }\n  }\n}\n\nNote: Auth changed from API key to OAuth token",
+      "difficulty": "hard"
+    }
+  ]
+}

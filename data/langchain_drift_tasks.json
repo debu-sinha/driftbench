@@ -1,0 +1,508 @@
+{
+  "name": "DRIFTBENCH-LangChain",
+  "version": "0.1",
+  "created": "2025-12-25T10:05:21.835220",
+  "n_tasks": 26,
+  "categories": {
+    "import_changed": 9,
+    "behavior_changed": 13,
+    "param_renamed": 2,
+    "default_changed": 2
+  },
+  "tasks": [
+    {
+      "task_id": "langchain_organic_0000",
+      "question": "How do you import ChatOpenAI in LangChain v0.1+?",
+      "answer_v1": "from langchain.chat_models import ChatOpenAI",
+      "answer_v2": "from langchain_openai import ChatOpenAI",
+      "evidence_v1": "[LangChain 0.0.350] LangChain split into langchain-core and provider packages Method: from langchain.chat_models import ChatOpenAI",
+      "evidence_v2": "[LangChain 0.1.0] LangChain split into langchain-core and provider packages Method: from langchain_openai import ChatOpenAI",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/chatopenai_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.chat_models import ChatOpenAI",
+        "new_value": "from langchain_openai import ChatOpenAI",
+        "context": "LangChain split into langchain-core and provider packages",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0001",
+      "question": "How do you import OpenAI embeddings in LangChain v0.1+?",
+      "answer_v1": "from langchain.embeddings import OpenAIEmbeddings",
+      "answer_v2": "from langchain_openai import OpenAIEmbeddings",
+      "evidence_v1": "[LangChain 0.0.350] Embeddings moved to provider-specific packages Method: from langchain.embeddings import OpenAIEmbeddings",
+      "evidence_v2": "[LangChain 0.1.0] Embeddings moved to provider-specific packages Method: from langchain_openai import OpenAIEmbeddings",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/openai_embeddings_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.embeddings import OpenAIEmbeddings",
+        "new_value": "from langchain_openai import OpenAIEmbeddings",
+        "context": "Embeddings moved to provider-specific packages",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0002",
+      "question": "How do you import Chroma vector store in LangChain v0.1+?",
+      "answer_v1": "from langchain.vectorstores import Chroma",
+      "answer_v2": "from langchain_chroma import Chroma",
+      "evidence_v1": "[LangChain 0.0.350] Vector stores moved to community or dedicated packages Method: from langchain.vectorstores import Chroma",
+      "evidence_v2": "[LangChain 0.1.0] Vector stores moved to community or dedicated packages Method: from langchain_chroma import Chroma",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/chroma_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.vectorstores import Chroma",
+        "new_value": "from langchain_chroma import Chroma",
+        "context": "Vector stores moved to community or dedicated packages",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "langchain_organic_0003",
+      "question": "What method do you use to run a chain in LangChain v0.1+?",
+      "answer_v1": "chain.run(input)",
+      "answer_v2": "chain.invoke(input)",
+      "evidence_v1": "[LangChain 0.0.350] LangChain Expression Language (LCEL) uses invoke/batch/stream Method: chain.run(input)",
+      "evidence_v2": "[LangChain 0.1.0] LangChain Expression Language (LCEL) uses invoke/batch/stream Method: chain.invoke(input)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/chain_invocation.md",
+        "change_type": "behavior_changed",
+        "old_value": "chain.run(input)",
+        "new_value": "chain.invoke(input)",
+        "context": "LangChain Expression Language (LCEL) uses invoke/batch/stream",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0004",
+      "question": "What async method runs a chain in LangChain v0.1+?",
+      "answer_v1": "await chain.arun(input)",
+      "answer_v2": "await chain.ainvoke(input)",
+      "evidence_v1": "[LangChain 0.0.350] Async methods renamed to ainvoke/abatch/astream Method: await chain.arun(input)",
+      "evidence_v2": "[LangChain 0.1.0] Async methods renamed to ainvoke/abatch/astream Method: await chain.ainvoke(input)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/async_chain_execution.md",
+        "change_type": "behavior_changed",
+        "old_value": "await chain.arun(input)",
+        "new_value": "await chain.ainvoke(input)",
+        "context": "Async methods renamed to ainvoke/abatch/astream",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0005",
+      "question": "How do you compose chains together in LCEL?",
+      "answer_v1": "SequentialChain([chain1, chain2])",
+      "answer_v2": "chain1 | chain2 (pipe operator)",
+      "evidence_v1": "[LangChain 0.0.300] LCEL uses pipe operator for chain composition Method: SequentialChain([chain1, chain2])",
+      "evidence_v2": "[LangChain 0.1.0] LCEL uses pipe operator for chain composition Method: chain1 | chain2 (pipe operator)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/chain_composition.md",
+        "change_type": "behavior_changed",
+        "old_value": "SequentialChain([chain1, chain2])",
+        "new_value": "chain1 | chain2 (pipe operator)",
+        "context": "LCEL uses pipe operator for chain composition",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "langchain_organic_0006",
+      "question": "What replaces LLMChain in LangChain v0.1+?",
+      "answer_v1": "LLMChain(llm=llm, prompt=prompt)",
+      "answer_v2": "prompt | llm (pipe composition)",
+      "evidence_v1": "[LangChain 0.0.300] LLMChain deprecated in favor of LCEL Method: LLMChain(llm=llm, prompt=prompt)",
+      "evidence_v2": "[LangChain 0.1.0] LLMChain deprecated in favor of LCEL Method: prompt | llm (pipe composition)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/prompt_templates.md",
+        "change_type": "behavior_changed",
+        "old_value": "LLMChain(llm=llm, prompt=prompt)",
+        "new_value": "prompt | llm (pipe composition)",
+        "context": "LLMChain deprecated in favor of LCEL",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "langchain_organic_0007",
+      "question": "How do you parse LLM output in LCEL?",
+      "answer_v1": "LLMChain with output_key",
+      "answer_v2": "chain | parser (RunnablePassthrough)",
+      "evidence_v1": "[LangChain 0.0.300] Output parsing integrated into LCEL Method: LLMChain with output_key",
+      "evidence_v2": "[LangChain 0.1.0] Output parsing integrated into LCEL Method: chain | parser (RunnablePassthrough)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/output_parsing.md",
+        "change_type": "param_renamed",
+        "old_value": "LLMChain with output_key",
+        "new_value": "chain | parser (RunnablePassthrough)",
+        "context": "Output parsing integrated into LCEL",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "task_id": "langchain_organic_0008",
+      "question": "How do you pass callbacks to a chain in LangChain v0.2?",
+      "answer_v1": "Callbacks passed at chain creation",
+      "answer_v2": "Callbacks passed at invoke time (config={'callbacks': [...]})",
+      "evidence_v1": "[LangChain 0.1.0] LangChain v0.2 prefers config dict for callbacks Method: Callbacks passed at chain creation",
+      "evidence_v2": "[LangChain 0.2.0] LangChain v0.2 prefers config dict for callbacks Method: Callbacks passed at invoke time (config={'callbacks': [...]})",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/callback_handling.md",
+        "change_type": "default_changed",
+        "old_value": "Callbacks passed at chain creation",
+        "new_value": "Callbacks passed at invoke time (config={'callbacks': [...]})",
+        "context": "LangChain v0.2 prefers config dict for callbacks",
+        "version_old": "0.1.0",
+        "version_new": "0.2.0"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "langchain_organic_0009",
+      "question": "How do you add memory to LCEL chains in LangChain v0.2?",
+      "answer_v1": "ConversationChain with memory parameter",
+      "answer_v2": "RunnableWithMessageHistory wrapper",
+      "evidence_v1": "[LangChain 0.1.0] Memory handling refactored for LCEL compatibility Method: ConversationChain with memory parameter",
+      "evidence_v2": "[LangChain 0.2.0] Memory handling refactored for LCEL compatibility Method: RunnableWithMessageHistory wrapper",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/memory_in_chains.md",
+        "change_type": "behavior_changed",
+        "old_value": "ConversationChain with memory parameter",
+        "new_value": "RunnableWithMessageHistory wrapper",
+        "context": "Memory handling refactored for LCEL compatibility",
+        "version_old": "0.1.0",
+        "version_new": "0.2.0"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "task_id": "langchain_organic_0010",
+      "question": "How do you import TextLoader in LangChain v0.2?",
+      "answer_v1": "from langchain.document_loaders import TextLoader",
+      "answer_v2": "from langchain_community.document_loaders import TextLoader",
+      "evidence_v1": "[LangChain 0.1.0] Document loaders moved to langchain-community Method: from langchain.document_loaders import TextLoader",
+      "evidence_v2": "[LangChain 0.2.0] Document loaders moved to langchain-community Method: from langchain_community.document_loaders import TextLoader",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/document_loaders.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.document_loaders import TextLoader",
+        "new_value": "from langchain_community.document_loaders import TextLoader",
+        "context": "Document loaders moved to langchain-community",
+        "version_old": "0.1.0",
+        "version_new": "0.2.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0011",
+      "question": "How do you import RecursiveCharacterTextSplitter in LangChain v0.2?",
+      "answer_v1": "from langchain.text_splitter import RecursiveCharacterTextSplitter",
+      "answer_v2": "from langchain_text_splitters import RecursiveCharacterTextSplitter",
+      "evidence_v1": "[LangChain 0.1.0] Text splitters moved to dedicated package Method: from langchain.text_splitter import RecursiveCharacterTextSplitter",
+      "evidence_v2": "[LangChain 0.2.0] Text splitters moved to dedicated package Method: from langchain_text_splitters import RecursiveCharacterTextSplitter",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/text_splitters.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.text_splitter import RecursiveCharacterTextSplitter",
+        "new_value": "from langchain_text_splitters import RecursiveCharacterTextSplitter",
+        "context": "Text splitters moved to dedicated package",
+        "version_old": "0.1.0",
+        "version_new": "0.2.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0012",
+      "question": "How do you create a ReAct agent in LangChain v0.1+?",
+      "answer_v1": "initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT)",
+      "answer_v2": "create_react_agent(llm, tools, prompt)",
+      "evidence_v1": "[LangChain 0.0.350] Agent creation refactored with explicit prompt Method: initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT)",
+      "evidence_v2": "[LangChain 0.1.0] Agent creation refactored with explicit prompt Method: create_react_agent(llm, tools, prompt)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/agent_creation.md",
+        "change_type": "behavior_changed",
+        "old_value": "initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT)",
+        "new_value": "create_react_agent(llm, tools, prompt)",
+        "context": "Agent creation refactored with explicit prompt",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "langchain_organic_0013",
+      "question": "How do you execute an agent in LangChain v0.1+?",
+      "answer_v1": "agent.run(query)",
+      "answer_v2": "AgentExecutor(agent, tools).invoke({'input': query})",
+      "evidence_v1": "[LangChain 0.0.350] AgentExecutor required for running agents Method: agent.run(query)",
+      "evidence_v2": "[LangChain 0.1.0] AgentExecutor required for running agents Method: AgentExecutor(agent, tools).invoke({'input': query})",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/agent_execution.md",
+        "change_type": "behavior_changed",
+        "old_value": "agent.run(query)",
+        "new_value": "AgentExecutor(agent, tools).invoke({'input': query})",
+        "context": "AgentExecutor required for running agents",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "langchain_organic_0014",
+      "question": "How do you import the @tool decorator in LangChain v0.1+?",
+      "answer_v1": "from langchain.agents import tool",
+      "answer_v2": "from langchain_core.tools import tool",
+      "evidence_v1": "[LangChain 0.0.350] Tool decorator moved to langchain-core Method: from langchain.agents import tool",
+      "evidence_v2": "[LangChain 0.1.0] Tool decorator moved to langchain-core Method: from langchain_core.tools import tool",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/tool_decorator.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.agents import tool",
+        "new_value": "from langchain_core.tools import tool",
+        "context": "Tool decorator moved to langchain-core",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0015",
+      "question": "How do you create a RAG chain in LangChain v0.1+?",
+      "answer_v1": "RetrievalQA.from_chain_type(llm, retriever=retriever)",
+      "answer_v2": "create_retrieval_chain(retriever, combine_docs_chain)",
+      "evidence_v1": "[LangChain 0.0.300] RAG chains refactored for LCEL Method: RetrievalQA.from_chain_type(llm, retriever=retriever)",
+      "evidence_v2": "[LangChain 0.1.0] RAG chains refactored for LCEL Method: create_retrieval_chain(retriever, combine_docs_chain)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/rag_chain_creation.md",
+        "change_type": "behavior_changed",
+        "old_value": "RetrievalQA.from_chain_type(llm, retriever=retriever)",
+        "new_value": "create_retrieval_chain(retriever, combine_docs_chain)",
+        "context": "RAG chains refactored for LCEL",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "task_id": "langchain_organic_0016",
+      "question": "What does similarity_search return in LangChain?",
+      "answer_v1": "vectorstore.similarity_search(query, k=4)",
+      "answer_v2": "vectorstore.similarity_search(query, k=4) # unchanged but returns List[Document]",
+      "evidence_v1": "[LangChain 0.0.300] Return type standardized to List[Document] Method: vectorstore.similarity_search(query, k=4)",
+      "evidence_v2": "[LangChain 0.1.0] Return type standardized to List[Document] Method: vectorstore.similarity_search(query, k=4) # unchanged but returns List[Document]",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/similarity_search.md",
+        "change_type": "param_renamed",
+        "old_value": "vectorstore.similarity_search(query, k=4)",
+        "new_value": "vectorstore.similarity_search(query, k=4) # unchanged but returns List[Document]",
+        "context": "Return type standardized to List[Document]",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0017",
+      "question": "How do you specify search type when creating a retriever?",
+      "answer_v1": "vectorstore.as_retriever(search_kwargs={'k': 4})",
+      "answer_v2": "vectorstore.as_retriever(search_type='similarity', search_kwargs={'k': 4})",
+      "evidence_v1": "[LangChain 0.0.300] Explicit search_type parameter recommended Method: vectorstore.as_retriever(search_kwargs={'k': 4})",
+      "evidence_v2": "[LangChain 0.1.0] Explicit search_type parameter recommended Method: vectorstore.as_retriever(search_type='similarity', search_kwargs={'k': 4})",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/retriever_creation.md",
+        "change_type": "behavior_changed",
+        "old_value": "vectorstore.as_retriever(search_kwargs={'k': 4})",
+        "new_value": "vectorstore.as_retriever(search_type='similarity', search_kwargs={'k': 4})",
+        "context": "Explicit search_type parameter recommended",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "langchain_organic_0018",
+      "question": "How do you import PydanticOutputParser in LangChain v0.1+?",
+      "answer_v1": "from langchain.output_parsers import PydanticOutputParser",
+      "answer_v2": "from langchain_core.output_parsers import PydanticOutputParser",
+      "evidence_v1": "[LangChain 0.0.250] Output parsers moved to langchain-core Method: from langchain.output_parsers import PydanticOutputParser",
+      "evidence_v2": "[LangChain 0.1.0] Output parsers moved to langchain-core Method: from langchain_core.output_parsers import PydanticOutputParser",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/pydanticoutputparser_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.output_parsers import PydanticOutputParser",
+        "new_value": "from langchain_core.output_parsers import PydanticOutputParser",
+        "context": "Output parsers moved to langchain-core",
+        "version_old": "0.0.250",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0019",
+      "question": "What parser is recommended for JSON output in LangChain v0.1+?",
+      "answer_v1": "OutputFixingParser with LLM for fixing",
+      "answer_v2": "JsonOutputParser with automatic schema validation",
+      "evidence_v1": "[LangChain 0.0.250] JSON parsing improved with better error handling Method: OutputFixingParser with LLM for fixing",
+      "evidence_v2": "[LangChain 0.1.0] JSON parsing improved with better error handling Method: JsonOutputParser with automatic schema validation",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/json_output_parsing.md",
+        "change_type": "behavior_changed",
+        "old_value": "OutputFixingParser with LLM for fixing",
+        "new_value": "JsonOutputParser with automatic schema validation",
+        "context": "JSON parsing improved with better error handling",
+        "version_old": "0.0.250",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "langchain_organic_0020",
+      "question": "How do you import ChatPromptTemplate in LangChain v0.1+?",
+      "answer_v1": "from langchain.prompts import ChatPromptTemplate",
+      "answer_v2": "from langchain_core.prompts import ChatPromptTemplate",
+      "evidence_v1": "[LangChain 0.0.200] Prompts moved to langchain-core Method: from langchain.prompts import ChatPromptTemplate",
+      "evidence_v2": "[LangChain 0.1.0] Prompts moved to langchain-core Method: from langchain_core.prompts import ChatPromptTemplate",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/chatprompttemplate_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain.prompts import ChatPromptTemplate",
+        "new_value": "from langchain_core.prompts import ChatPromptTemplate",
+        "context": "Prompts moved to langchain-core",
+        "version_old": "0.0.200",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0021",
+      "question": "How do you add a messages placeholder in ChatPromptTemplate?",
+      "answer_v1": "MessagesPlaceholder(variable_name='history')",
+      "answer_v2": "MessagesPlaceholder('history') or ('placeholder', '{history}')",
+      "evidence_v1": "[LangChain 0.0.200] Multiple ways to define message placeholders Method: MessagesPlaceholder(variable_name='history')",
+      "evidence_v2": "[LangChain 0.1.0] Multiple ways to define message placeholders Method: MessagesPlaceholder('history') or ('placeholder', '{history}')",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/message_placeholders.md",
+        "change_type": "behavior_changed",
+        "old_value": "MessagesPlaceholder(variable_name='history')",
+        "new_value": "MessagesPlaceholder('history') or ('placeholder', '{history}')",
+        "context": "Multiple ways to define message placeholders",
+        "version_old": "0.0.200",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "langchain_organic_0022",
+      "question": "How do you access streamed content in LangChain v0.1+?",
+      "answer_v1": "for chunk in llm.stream(prompt): print(chunk)",
+      "answer_v2": "for chunk in chain.stream(input): print(chunk.content)",
+      "evidence_v1": "[LangChain 0.0.300] Streaming returns AIMessageChunk objects Method: for chunk in llm.stream(prompt): print(chunk)",
+      "evidence_v2": "[LangChain 0.1.0] Streaming returns AIMessageChunk objects Method: for chunk in chain.stream(input): print(chunk.content)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/streaming_output.md",
+        "change_type": "behavior_changed",
+        "old_value": "for chunk in llm.stream(prompt): print(chunk)",
+        "new_value": "for chunk in chain.stream(input): print(chunk.content)",
+        "context": "Streaming returns AIMessageChunk objects",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "langchain_organic_0023",
+      "question": "What method is used for async streaming in LangChain?",
+      "answer_v1": "async for chunk in llm.astream(prompt)",
+      "answer_v2": "async for chunk in chain.astream(input)",
+      "evidence_v1": "[LangChain 0.0.300] Async streaming uses astream method Method: async for chunk in llm.astream(prompt)",
+      "evidence_v2": "[LangChain 0.1.0] Async streaming uses astream method Method: async for chunk in chain.astream(input)",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/async_streaming.md",
+        "change_type": "behavior_changed",
+        "old_value": "async for chunk in llm.astream(prompt)",
+        "new_value": "async for chunk in chain.astream(input)",
+        "context": "Async streaming uses astream method",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0024",
+      "question": "What package is needed for LangSmith tracing in LangChain v0.1+?",
+      "answer_v1": "LANGCHAIN_TRACING_V2=true environment variable",
+      "answer_v2": "LANGCHAIN_TRACING_V2=true with langsmith package",
+      "evidence_v1": "[LangChain 0.0.350] LangSmith tracing requires separate langsmith package Method: LANGCHAIN_TRACING_V2=true environment variable",
+      "evidence_v2": "[LangChain 0.1.0] LangSmith tracing requires separate langsmith package Method: LANGCHAIN_TRACING_V2=true with langsmith package",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/tracing.md",
+        "change_type": "default_changed",
+        "old_value": "LANGCHAIN_TRACING_V2=true environment variable",
+        "new_value": "LANGCHAIN_TRACING_V2=true with langsmith package",
+        "context": "LangSmith tracing requires separate langsmith package",
+        "version_old": "0.0.350",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "task_id": "langchain_organic_0025",
+      "question": "How do you pull prompts from LangChain Hub?",
+      "answer_v1": "from langchain import hub",
+      "answer_v2": "from langchain import hub  # or langchainhub package",
+      "evidence_v1": "[LangChain 0.0.300] Hub functionality may require langchainhub package Method: from langchain import hub",
+      "evidence_v2": "[LangChain 0.1.0] Hub functionality may require langchainhub package Method: from langchain import hub  # or langchainhub package",
+      "category": "factoid",
+      "source_change": {
+        "file_path": "docs/hub_import.md",
+        "change_type": "import_changed",
+        "old_value": "from langchain import hub",
+        "new_value": "from langchain import hub  # or langchainhub package",
+        "context": "Hub functionality may require langchainhub package",
+        "version_old": "0.0.300",
+        "version_new": "0.1.0"
+      },
+      "difficulty": "medium"
+    }
+  ]
+}
