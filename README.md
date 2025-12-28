@@ -1,73 +1,91 @@
-# DRIFTBENCH
+---
+license: mit
+task_categories:
+- question-answering
+- text-generation
+language:
+- en
+tags:
+- rag
+- knowledge-drift
+- retrieval-augmented-generation
+- distribution-shift
+- ai-safety
+- benchmark
+- nlp
+size_categories:
+- n<1K
+pretty_name: DRIFTBENCH
+---
 
-**Measuring Reliability Half-Life of RAG Systems Under Knowledge Drift**
+# DRIFTBENCH: Measuring Reliability Half-Life of RAG Systems Under Knowledge Drift
 
-[![arXiv](https://img.shields.io/badge/arXiv-2512.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2512.XXXXX)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+**The first benchmark treating knowledge drift as a first-class experimental variable.**
 
-## Overview
+## The Knowledge Drift Problem
 
-Systems that rely on external knowledge—RAG pipelines, tool-using agents, and cached memory systems—face an unmeasured vulnerability: **knowledge drift**, the divergence between indexed documentation and current ground truth.
+```
+Time T0                              Time T1
+┌──────────────┐                    ┌──────────────┐
+│   Docs V1    │    Knowledge      │   Docs V2    │
+│      |       │      Drift        │      |       │
+│      v       │   ==========>     │      v       │
+│  RAG Index   │                   │  Old Index   │ (outdated!)
+│      |       │                   │      |       │
+│      v       │                   │      v       │
+│   Correct    │                   │    Wrong     │
+└──────────────┘                    └──────────────┘
+```
 
-DRIFTBENCH is the first benchmark treating knowledge drift as a first-class experimental variable. Through **77 organically-derived drift tasks** from real version changes in FastAPI, Pydantic, and LangChain, we uncover a surprising finding:
-
-> **Drift effects are heterogeneous.** Accuracy can *improve* under drift while Silent Failure Rate persists—revealing safety risks invisible to aggregate metrics.
-
-## Key Findings
-
-| Metric | V1 (Baseline) | V2 (Drifted) | Insight |
-|--------|---------------|--------------|---------|
-| Term-based Accuracy | 64.9% | 70.1% (+5.2%) | Drift can *improve* accuracy |
-| Dense RAG Accuracy | 80.5% | 85.7% (+5.2%) | Semantic retrieval benefits from clearer docs |
-| Silent Failure Rate | 11.7% | 11.7% | **SFR persists regardless of accuracy** |
-| Oracle Gap | — | 13% | Reasoning failures even with perfect retrieval |
-
-**Core insight**: Accuracy alone is insufficient for monitoring RAG reliability under drift.
+**The Problem:** Documentation changes, but your RAG index stays stale. Answers become wrong silently.
 
 ## Drift Taxonomy
 
-We identify three drift regimes with distinct safety implications:
+| Type | Description | Effect | Safety |
+|------|-------------|--------|--------|
+| **Corrective** | V2 clarifies V1 ambiguities | Accuracy up | Improves reliability |
+| **Breaking** | V2 invalidates V1 patterns | Silent failures up | Dangerous |
+| **Masking** | Accuracy up but SFR persists | Hidden risk | Deceptive |
 
-| Regime | Description | Safety Implication |
-|--------|-------------|-------------------|
-| **Corrective** | V2 clarifies V1 ambiguities | Improves reliability |
-| **Breaking** | V2 invalidates V1 patterns | Causes silent failures |
-| **Masking** | Accuracy improves but SFR persists | Hidden safety risk |
+## Dataset Description
 
-## Installation
+DRIFTBENCH contains **77 organically-derived drift tasks** mined from real version changes in FastAPI, Pydantic, and LangChain documentation. Each task has:
 
-```bash
-git clone https://github.com/debu-sinha/driftbench.git
-cd driftbench
-pip install -r requirements.txt
+- A question that has different correct answers depending on documentation version
+- V1 answer (based on older documentation)
+- V2 answer (based on newer documentation)
+- Evidence from both versions
+- Metadata about the type of change
+
+### Key Finding
+
+> **Drift effects are heterogeneous.** Accuracy can *improve* under drift while Silent Failure Rate persists at 12%—revealing safety risks invisible to aggregate metrics.
+
+## Dataset Structure
+
+```json
+{
+  "task_id": "fastapi_organic_0000",
+  "question": "What is the default value for response_model_exclude_unset in FastAPI?",
+  "answer_v1": "False",
+  "answer_v2": "True",
+  "evidence_v1": "[FastAPI 0.100.0] Response model serialization...",
+  "evidence_v2": "[FastAPI 0.109.0] Response model serialization...",
+  "category": "factoid",
+  "difficulty": "easy",
+  "source": "fastapi",
+  "source_change": {
+    "file_path": "docs/response_model_exclude_unset.md",
+    "change_type": "default_changed",
+    "old_value": "False",
+    "new_value": "True",
+    "version_old": "0.100.0",
+    "version_new": "0.109.0"
+  }
+}
 ```
-
-## Quick Start
-
-```bash
-# Set API key
-export OPENAI_API_KEY=your_key
-
-# Run full experiment
-python code/run_full_experiment.py
-
-# Generate visualizations
-python code/regenerate_v4_plots.py
-```
-
-## Metrics
-
-| Metric | Definition |
-|--------|------------|
-| **Success Rate** | $S(d) = P(\hat{y} = y \mid d)$ — standard accuracy |
-| **Silent Failure Rate** | $\text{SFR}_\tau = P(\hat{y} \neq y \land c \geq \tau)$ — confident errors |
-| **Reliability Half-Life** | $d_{1/2} = \inf\{d : S(d) \leq 0.5 \cdot S(0)\}$ — drift robustness |
-| **Oracle Gap** | $S_{\text{Oracle}} - S_{\text{RAG}}$ — retrieval vs reasoning failures |
 
 ## Data Sources
-
-77 tasks mined from organic breaking changes:
 
 | Source | Tasks | Examples |
 |--------|-------|----------|
@@ -75,33 +93,92 @@ python code/regenerate_v4_plots.py
 | LangChain | 26 | Package restructuring, `.run()` → `.invoke()` |
 | Tool APIs | 10 | Parameter renames, unit changes |
 
-## Repository Structure
+## Drift Taxonomy
+
+| Regime | Description | Safety Implication |
+|--------|-------------|-------------------|
+| **Corrective** | V2 clarifies V1 ambiguities | Improves reliability |
+| **Breaking** | V2 invalidates V1 patterns | Causes silent failures |
+| **Masking** | Accuracy improves but SFR persists | Hidden safety risk |
+
+## Evaluation Metrics
+
+**Four key metrics for RAG reliability under drift:**
 
 ```
-driftbench/
-├── code/
-│   ├── driftbench_core.py          # Core benchmark logic
-│   ├── run_full_experiment.py      # Main experiment runner
-│   └── regenerate_v4_plots.py      # Visualization generation
-├── data/
-│   ├── driftbench_combined.json    # 77 drift tasks
-│   ├── combined_corpus_v1.json     # V1 documentation
-│   └── combined_corpus_v2.json     # V2 documentation
-├── results/
-│   └── full_experiment_results.json
-└── figures/
++----------------------+-------------------------------------+
+| Success Rate         | Standard accuracy                   |
++----------------------+-------------------------------------+
+| Silent Failure Rate  | Wrong + Confident (hidden danger)   |
++----------------------+-------------------------------------+
+| Reliability          | Time until 50% accuracy drop        |
+| Half-Life            |                                     |
++----------------------+-------------------------------------+
+| Oracle Gap           | Retrieval vs reasoning failures     |
++----------------------+-------------------------------------+
 ```
 
-## Related Work
+| Metric | Definition |
+|--------|------------|
+| **Success Rate** | P(correct answer given docs) |
+| **Silent Failure Rate** | P(wrong ∧ confident) — confident errors |
+| **Reliability Half-Life** | Drift amount before 50% accuracy drop |
+| **Oracle Gap** | Oracle - RAG accuracy (retrieval vs reasoning) |
 
-This work is part of a research program on **AI reliability under distribution shift**:
+## Usage
 
-| Paper | Focus | Link |
-|-------|-------|------|
-| **The Semantic Illusion** | Embedding-based detection fails on RLHF hallucinations | [arXiv:2512.15068](https://arxiv.org/abs/2512.15068) |
-| **ATCB** | Agents don't know when they'll fail (calibration gap) | [GitHub](https://github.com/debu-sinha/atcb-benchmark) |
-| **ConformalDrift** | Conformal guarantees collapse under shift | [GitHub](https://github.com/debu-sinha/conformaldrift) |
-| **DRIFTBENCH** | RAG reliability degrades over time | This repo |
+### Load with Datasets Library
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset("dsinha/driftbench")
+
+# Access tasks
+for task in dataset["train"]:
+    print(f"Q: {task['question']}")
+    print(f"V1: {task['answer_v1']}")
+    print(f"V2: {task['answer_v2']}")
+```
+
+### Evaluate a RAG System
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset("dsinha/driftbench")
+
+def evaluate_rag(rag_system, corpus_version="v1"):
+    correct = 0
+    silent_failures = 0
+
+    for task in dataset["train"]:
+        # Get RAG answer
+        answer, confidence = rag_system.query(task["question"])
+
+        # Check correctness based on corpus version
+        expected = task[f"answer_{corpus_version}"]
+        is_correct = answer_matches(answer, expected)
+
+        if is_correct:
+            correct += 1
+        elif confidence > 0.8:  # High confidence but wrong
+            silent_failures += 1
+
+    accuracy = correct / len(dataset["train"])
+    sfr = silent_failures / len(dataset["train"])
+
+    return {"accuracy": accuracy, "sfr": sfr}
+```
+
+## Corpus Files
+
+The dataset includes two documentation corpora:
+
+- **corpus_v1.json**: Older documentation versions
+- **corpus_v2.json**: Newer documentation versions
+
+These can be used to build RAG indices for testing drift effects.
 
 ## Citation
 
@@ -114,6 +191,21 @@ This work is part of a research program on **AI reliability under distribution s
 }
 ```
 
+## Related Work
+
+This dataset is part of a research program on **AI reliability under distribution shift**:
+
+| Paper | Focus | Link |
+|-------|-------|------|
+| **The Semantic Illusion** | Embedding-based detection fails on RLHF | [arXiv:2512.15068](https://arxiv.org/abs/2512.15068) |
+| **ATCB** | Agents don't know when they'll fail | [GitHub](https://github.com/debu-sinha/atcb-benchmark) |
+| **ConformalDrift** | Conformal guarantees collapse under shift | [GitHub](https://github.com/debu-sinha/conformaldrift) |
+| **DRIFTBENCH** | RAG reliability degrades over time | This dataset |
+
 ## License
 
 MIT License
+
+## Author
+
+[Debu Sinha](https://github.com/debu-sinha)
