@@ -1,78 +1,49 @@
-# DRIFTBENCH: Measuring Reliability Half-Life of RAG Systems Under Knowledge Drift
+# DRIFTBENCH
 
-**Do RAG Systems Fail Silently When Documentation Goes Stale?**
+**Measuring Reliability Half-Life of RAG Systems Under Knowledge Drift**
 
+[![arXiv](https://img.shields.io/badge/arXiv-2512.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2512.XXXXX)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Author:** Debu Sinha
-
 ## Overview
 
-DRIFTBENCH is the first benchmark treating knowledge drift as a first-class experimental variable. Through **77 organically-derived drift tasks** from real version changes in FastAPI, Pydantic, and LangChain, we uncover a surprising finding: **drift effects are heterogeneous**.
+Systems that rely on external knowledge—RAG pipelines, tool-using agents, and cached memory systems—face an unmeasured vulnerability: **knowledge drift**, the divergence between indexed documentation and current ground truth.
 
-**Key Insight**: Accuracy alone is insufficient for monitoring RAG reliability. Average accuracy can *improve* under drift (64.9% -> 70.1%), but **Silent Failure Rate persists at ~12%** regardless of accuracy direction.
+DRIFTBENCH is the first benchmark treating knowledge drift as a first-class experimental variable. Through **77 organically-derived drift tasks** from real version changes in FastAPI, Pydantic, and LangChain, we uncover a surprising finding:
 
-## Key Results
+> **Drift effects are heterogeneous.** Accuracy can *improve* under drift while Silent Failure Rate persists—revealing safety risks invisible to aggregate metrics.
 
-| Retriever | V1 Accuracy | V2 Accuracy | Silent Failure Rate |
-|-----------|-------------|-------------|---------------------|
-| Term-based RAG | 64.9% | 70.1% | 11.7% |
-| Dense RAG | 80.5% | 85.7% | 10.4-14.3% |
-| Oracle-Doc | 80.5% | 87.0% | 7.8-15.6% |
+## Key Findings
 
-**Key Findings**:
-1. **Drift is not uniformly harmful**: Updated documentation can clarify ambiguities
-2. **Silent failures persist**: 12% SFR regardless of accuracy improvement
-3. **Three drift regimes**: Corrective, breaking, and masking drift have distinct safety implications
+| Metric | V1 (Baseline) | V2 (Drifted) | Insight |
+|--------|---------------|--------------|---------|
+| Term-based Accuracy | 64.9% | 70.1% (+5.2%) | Drift can *improve* accuracy |
+| Dense RAG Accuracy | 80.5% | 85.7% (+5.2%) | Semantic retrieval benefits from clearer docs |
+| Silent Failure Rate | 11.7% | 11.7% | **SFR persists regardless of accuracy** |
+| Oracle Gap | — | 13% | Reasoning failures even with perfect retrieval |
+
+**Core insight**: Accuracy alone is insufficient for monitoring RAG reliability under drift.
 
 ## Drift Taxonomy
 
-| Drift Type | Count | Description |
-|------------|-------|-------------|
-| default_changed | 15 | Default parameter values changed |
-| behavior_changed | 28 | Function/method behavior changed |
-| param_renamed | 18 | Parameters or methods renamed |
-| import_changed | 16 | Import paths restructured |
+We identify three drift regimes with distinct safety implications:
 
-## Project Structure
-
-```
-driftbench/
-├── code/
-│   ├── driftbench_core.py          # Core benchmark logic
-│   ├── run_full_experiment.py      # Main experiment runner
-│   ├── fastapi_diff_miner.py       # FastAPI drift task mining
-│   ├── langchain_diff_miner.py     # LangChain drift task mining
-│   └── regenerate_v4_plots.py      # Visualization generation
-├── paper/
-│   ├── driftbench.tex              # LaTeX source
-│   ├── driftbench_final.pdf        # Final paper
-│   └── references.bib              # Bibliography
-├── figures/
-│   ├── drift_decay_curves.png      # Accuracy decay over time
-│   ├── llm_experiment_plots.png    # LLM comparison
-│   └── sfr_experiment_plot.png     # Silent failure analysis
-├── data/
-│   ├── driftbench_combined.json    # 77 drift tasks
-│   ├── combined_corpus_v1.json     # V1 documentation corpus
-│   └── combined_corpus_v2.json     # V2 documentation corpus
-├── results/
-│   ├── full_experiment_results.json # Main experiment data (84KB)
-│   └── llm_drift_sweep_results.json # Drift decay data
-├── CHANGELOG.md                     # Version history
-└── README.md
-```
+| Regime | Description | Safety Implication |
+|--------|-------------|-------------------|
+| **Corrective** | V2 clarifies V1 ambiguities | Improves reliability |
+| **Breaking** | V2 invalidates V1 patterns | Causes silent failures |
+| **Masking** | Accuracy improves but SFR persists | Hidden safety risk |
 
 ## Installation
 
 ```bash
 git clone https://github.com/debu-sinha/driftbench.git
 cd driftbench
-pip install openai sentence-transformers scikit-learn matplotlib
+pip install -r requirements.txt
 ```
 
-## Running Experiments
+## Quick Start
 
 ```bash
 # Set API key
@@ -81,22 +52,56 @@ export OPENAI_API_KEY=your_key
 # Run full experiment
 python code/run_full_experiment.py
 
-# Generate plots
+# Generate visualizations
 python code/regenerate_v4_plots.py
 ```
 
 ## Metrics
 
-- **Accuracy**: Fraction of correct answers (standard RAG metric)
-- **Silent Failure Rate (SFR)**: Fraction of wrong answers with confidence >= 0.7
-- **Reliability Half-Life**: Time until accuracy drops below 50% (for decay analysis)
+| Metric | Definition |
+|--------|------------|
+| **Success Rate** | $S(d) = P(\hat{y} = y \mid d)$ — standard accuracy |
+| **Silent Failure Rate** | $\text{SFR}_\tau = P(\hat{y} \neq y \land c \geq \tau)$ — confident errors |
+| **Reliability Half-Life** | $d_{1/2} = \inf\{d : S(d) \leq 0.5 \cdot S(0)\}$ — drift robustness |
+| **Oracle Gap** | $S_{\text{Oracle}} - S_{\text{RAG}}$ — retrieval vs reasoning failures |
 
 ## Data Sources
 
-Tasks mined from organic breaking changes:
-- **FastAPI/Pydantic** (41 tasks): v1->v2 migration (orm_mode, @validator, .dict())
-- **LangChain** (26 tasks): Package restructuring (v0.0->v0.2), LCEL adoption
-- **Tool APIs** (10 tasks): Abstract API versioning scenarios
+77 tasks mined from organic breaking changes:
+
+| Source | Tasks | Examples |
+|--------|-------|----------|
+| FastAPI/Pydantic | 41 | `orm_mode` → `from_attributes`, `.dict()` → `.model_dump()` |
+| LangChain | 26 | Package restructuring, `.run()` → `.invoke()` |
+| Tool APIs | 10 | Parameter renames, unit changes |
+
+## Repository Structure
+
+```
+driftbench/
+├── code/
+│   ├── driftbench_core.py          # Core benchmark logic
+│   ├── run_full_experiment.py      # Main experiment runner
+│   └── regenerate_v4_plots.py      # Visualization generation
+├── data/
+│   ├── driftbench_combined.json    # 77 drift tasks
+│   ├── combined_corpus_v1.json     # V1 documentation
+│   └── combined_corpus_v2.json     # V2 documentation
+├── results/
+│   └── full_experiment_results.json
+└── figures/
+```
+
+## Related Work
+
+This work is part of a research program on **AI reliability under distribution shift**:
+
+| Paper | Focus | Link |
+|-------|-------|------|
+| **The Semantic Illusion** | Embedding-based detection fails on RLHF hallucinations | [arXiv:2512.15068](https://arxiv.org/abs/2512.15068) |
+| **ATCB** | Agents don't know when they'll fail (calibration gap) | [GitHub](https://github.com/debu-sinha/atcb-benchmark) |
+| **ConformalDrift** | Conformal guarantees collapse under shift | [GitHub](https://github.com/debu-sinha/conformaldrift) |
+| **DRIFTBENCH** | RAG reliability degrades over time | This repo |
 
 ## Citation
 
@@ -104,6 +109,7 @@ Tasks mined from organic breaking changes:
 @article{sinha2025driftbench,
   title={DRIFTBENCH: Measuring Reliability Half-Life of RAG Systems Under Knowledge Drift},
   author={Sinha, Debu},
+  journal={arXiv preprint},
   year={2025}
 }
 ```
